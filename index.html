@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A portfolio showcasing my projects and skills.">
+    <meta name="keywords" content="web development, programming, computer science, software engineering, portfolio, coding projects, front-end, back-end">
+    <meta name="author" content="Julie">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Julie’s Portfolio">
+    <meta property="og:description" content="Explore my portfolio featuring web development, programming projects, and computer science skills.">
+    <meta property="og:image" content="https://julieportfoliooo.netlify.app/assets/preview.png">
+    <meta property="og:url" content="https://julieportfoliooo.netlify.app/">
+    <meta property="og:type" content="website">
+    <title>Julie</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="styles/home.css" media="screen" type="text/css">
+</head>
+<body>
+    <noscript>
+        <p>JavaScript is disabled. Please enable it for the best experience!</p>
+    </noscript>
+    <header>
+        <nav id="main-nav">
+            <a href="index.html">
+                <img id="logo" src="assets/logo.png" alt="Logo">
+            </a>
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="about.html">About Me</a>
+            <a class="nav-link" href="projects.html">Projects</a>
+            <a class="nav-link" href="resume.html">Resume</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+            <search>
+                <input type="text" placeholder="Search...">
+            </search>
+            <nav id="dropdown-nav">
+                <input type="checkbox" id="toggle">
+            
+                <label for="toggle" class="menu-icon">
+                    <img src="assets/hamburger.svg" alt="Menu Icon" class="hamburger-icon">
+                    <img src="assets/x.svg" alt="Close Icon" class="close-icon">
+                </label>
+    
+                <ul id="dropdown-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </nav>
+        <audio controls>
+            <source src="assets/background_audio.mp3" type="audio/mp3">
+            Sorry, your browswer doesn't support this audio.
+        </audio>
+    </header>
+    <main id="main-page-container">
+        <div id="main-page-intro-container">
+            <hgroup>
+                <h1>Hi, I'm <span id="my-name">Julie</span>! Glad to Have You Here.</h1>
+                <p>I'm a fourth-year Computer Science student at UC San Diego, and this website is my portfolio. Here, you can learn more about me on the About Me page, explore my work on the Projects page, view and download my resume on the Resume page, and find my contact details on the Contact page. I hope you find this website helpful in getting to know me better. Thanks again for visiting!</p>
+            </hgroup>
+            <div id="main-page-image-container">
+                <picture id="main-img">
+                    <source srcset="assets/homepage-intro-large.png" media="(min-width: 1200px)">
+                    <source srcset="assets/homepage-intro-medium.png" media="(min-width: 768px)">
+                    <img src="assets/homepage-intro-small.png" alt="3D illustration of a girl using a laptop on a fluffy cloud">
+                </picture>
+                <img class="sub-img top-left" src="assets/heart.png" alt="3D illustration of a red heart">
+                <img class="sub-img top-right" src="assets/books.png" alt="3D illustration of three books">
+                <img class="sub-img bottom-left" src="assets/ice-cream.png" alt="3D illustration of an ice cream cone with three scoops">
+                <img class="sub-img bottom-right" src="assets/gamepad.png" alt="3D illustration of a yellow game controller">
+            </div>
+        </div>
+        <div id="project-thumbnail-container">            
+            <picture>
+                <source srcset="assets/project-thumbnail-large.png" media="(min-width: 1200px)">
+                <source srcset="assets/project-thumbnail-medium.png" media="(min-width: 768px)">
+                <img src="assets/project-thumbnail-small.png" alt="Project Thumbnail">
+            </picture>
+
+            <picture>
+                <source srcset="assets/project-thumbnail-large.png" media="(min-width: 1200px)">
+                <source srcset="assets/project-thumbnail-medium.png" media="(min-width: 768px)">
+                <img src="assets/project-thumbnail-small.png" alt="Project Thumbnail">
+            </picture>
+        </div>
+        <button type="button" class="btn">View Projects</button>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="https://github.com/Julie0827" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/julie-hong-065579298/" target="_blank">LinkedIn</a></li>
+            <li><a href="mailto:joh046@ucsd.edu" target="_blank">joh046@ucsd.edu</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

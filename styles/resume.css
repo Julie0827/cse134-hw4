@@ -1,0 +1,48 @@
+@import url("variables.css");
+
+:root {
+    --gamut-primary: color(display-p3 0.8 0.3 0.9);
+    --gamut-border: color-mix(in display-p3, var(--gamut-primary), white 40%);
+    --gamut-hover: color-mix(in display-p3, var(--gamut-primary), black 20%);
+    --gamut-active: color-mix(in display-p3, var(--gamut-primary), black 30%);
+}
+
+#resume-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+}
+
+#resume-container hgroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+iframe {
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+}
+
+.download-btn {
+    background-color: var(--gamut-primary, pink);
+    border: 2px solid var(--gamut-border, white);
+}
+
+.download-btn:hover {
+    background-color: var(--gamut-hover, plum);
+}
+
+.download-btn:active {
+    background-color: var(--gamut-active, purple);
+}
+
+@media (max-width: 600px) {
+    iframe {
+        width: 100%;
+        height: auto;
+        min-height: 300px;
+    }
+}

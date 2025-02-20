@@ -1,0 +1,51 @@
+@import url("variables.css");
+
+#profile {
+    width: 30%;
+}
+
+#profile img {
+    width: 100%;
+    border-radius: 20em;
+}
+
+#about-me-container h3 {
+    color: var(--main-color, pink);
+    font-size: 1.5em;
+}
+
+#about-me-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3em;
+}
+
+#profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#bio {
+    width: 60%;
+}
+
+@media (max-width: 600px) {
+    #profile-container {
+        flex-direction: column;
+    }
+
+    #profile {
+        width: 60%;
+    }
+
+    #about-me-container h3 {
+        font-size: 1.5em;
+    }
+
+    #bio {
+        width: 100%;
+        margin-top: 50px;
+    }
+}

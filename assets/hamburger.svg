@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="Menu">
+  <linearGradient id="a" x1="39.88" x2="472.12" y1="256" y2="256" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#f09da8" class="stopColoree2a7b svgShape"></stop>
+    <stop offset="1" stop-color="#922e3b" class="stopColor2e3192 svgShape"></stop>
+  </linearGradient>
+  <path fill="url(#a)" d="M425.9 130.2H86.1c-25.5 0-46.2-20.7-46.2-46.2 0-25.5 20.7-46.2 46.2-46.2H426c25.5 0 46.2 20.7 46.2 46.2-.1 25.5-20.8 46.2-46.3 46.2zM472.1 256c0-25.5-20.7-46.2-46.2-46.2H86.1c-25.5 0-46.2 20.7-46.2 46.2 0 25.5 20.7 46.2 46.2 46.2H426c25.4 0 46.1-20.7 46.1-46.2zm0 172c0-25.5-20.7-46.2-46.2-46.2H86.1c-25.5 0-46.2 20.7-46.2 46.2 0 25.5 20.7 46.2 46.2 46.2H426c25.4 0 46.1-20.7 46.1-46.2z"></path>
+</svg>
