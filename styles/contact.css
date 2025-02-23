@@ -97,7 +97,7 @@ my-contact[data-contact="email"] {
     justify-content: space-evenly;
 }
 
-.btn-clear {
+.clear-btn {
     color: var(--warning-color, red);
     text-decoration: underline;
     background-color: transparent;
@@ -146,14 +146,5 @@ my-contact[data-contact="email"] {
         width: 100%;
         padding: 0.1rem;
         border-radius: 0.5rem;
-    }
-    
-    .btn-clear {
-        font-size: 0.6em;
-    }
-
-    button.btn {
-        padding: 10px 15px;
-        font-size: 0.6em;
     }
 }

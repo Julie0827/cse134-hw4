@@ -133,22 +133,22 @@ p {
     line-height: 1.5;
 }
 
-:is(button, .top-btn) {
+:is(.btn, .top-btn, .download-btn, .clear-btn) {
     font-family: var(--font-button, 'Arial', sans-serif);
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
 }
 
-:is(button, .top-btn, .repo-btn):hover {
+:is(.btn, .top-btn, .repo-btn, .download-btn):hover {
     transform: scale(1.05);
 }
 
-:is(button, .top-btn, .repo-btn):active {
+:is(.btn, .top-btn, .repo-btn, .download-btn):active {
     transform: scale(0.95);
 }
 
-button.btn {
+.btn {
     padding: 1.5em 2.5em;
     border: none;
     border-radius: 10em;
@@ -158,12 +158,12 @@ button.btn {
     transition: transform 0.2s ease-in-out;
 }
 
-button.btn:hover {
+.btn:hover {
     color: white;
     box-shadow: var(--shadow-button-hover, none);
 }
 
-button.btn:active {
+.btn:active {
     background: var(--gradient-secondary, pink);
     box-shadow: var(--shadow-button-active, none);
 }
@@ -327,5 +327,13 @@ button.btn:active {
         display: flex;
         opacity: 1;
         transform: translateY(0);
+    }
+
+    :is(.btn, .clear-btn) {
+        font-size: 0.6em;
+    }
+
+    .btn {
+        padding: 10px 15px;
     }
 }
