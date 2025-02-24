@@ -6,10 +6,27 @@ document.addEventListener("DOMContentLoaded", function() {
     const pages = ["index.html", "about.html", "projects.html", "resume.html", "contact.html"];
     const titles = ["HOME", "ABOUT ME", "PROJECTS", "RESUME", "CONTACT"];
 
+    async function fetchPageContent(url) {
+        try {
+            const response = await fetch(url);
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, "text/html");
+            const nonVisibleElements = doc.querySelectorAll("script, style, meta, link, head, title, noscript, nav, audio, video");
+
+            nonVisibleElements.forEach(el => el.remove());
+            
+            return doc.body.textContent.trim();
+        } catch (error) {
+            return "";
+        }
+    }
+
     async function handleSearchSidebar() {
         resultsContainer.innerHTML = "";
-        
-        let query = searchBox.value.trim().toLowerCase();
+
+        let originalQuery = searchBox.value.trim();
+        let query = originalQuery.toLowerCase();
         
         if (query.length < 2) {
             searchSidebar.classList.remove("active");
@@ -31,12 +48,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 let start = Math.max(matchIndex - 20, 0);
                 let end = Math.min(matchIndex + query.length + 20, content.length);
                 let preview = originalContent.substring(start, end);
-                let originalQuery = originalContent.substring(matchIndex, matchIndex + query.length);
+                let matchQuery = originalContent.substring(matchIndex, matchIndex + query.length);
 
                 if (start != 0) preview = "..." + preview;
                 if (end != content.length) preview = preview + "...";
 
-                searchResults.push({page, title, preview, originalQuery});
+                searchResults.push({page, title, preview, originalQuery, matchQuery});
             }
         }
 
@@ -49,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let resultItem = document.createElement("div");
 
             resultItem.classList.add("result-item");
-            resultItem.innerHTML = `<a href="${result.page}?search=${query}">${result.title} - ${result.preview.replace(result.originalQuery, `<span class="search-query">${result.originalQuery}</span>`)}</a>`;
+            resultItem.innerHTML = `<a href="${result.page}?search=${result.originalQuery}">${result.title} - ${result.preview.replace(result.matchQuery, `<span class="match-query">${result.matchQuery}</span>`)}</a>`;
             
             console.log(query);
             console.log(result.preview);
@@ -61,33 +78,14 @@ document.addEventListener("DOMContentLoaded", function() {
     searchBox.addEventListener("input", handleSearchSidebar);
     searchBox.addEventListener("click", handleSearchSidebar);
 
-    async function fetchPageContent(url) {
-        try {
-            const response = await fetch(url);
-            const text = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(text, "text/html");
-
-            const nonVisibleElements = doc.querySelectorAll(
-                "script, style, meta, link, head, title, noscript, audio, video"
-            );
-
-            nonVisibleElements.forEach(el => el.remove());
-            
-            return doc.body.textContent.trim();
-        } catch (error) {
-            return "";
-        }
-    }
-
     document.addEventListener("click", function (e) {
         if (!searchBox.contains(e.target) && !searchSidebar.contains(e.target)) {
             searchSidebar.classList.remove("active");
 
-            let searchQueries = document.querySelectorAll(".search-query");
+            let matchQueries = document.querySelectorAll(".match-query");
 
-            searchQueries.forEach(query => {
-                query.classList.remove("search-query");
+            matchQueries.forEach(query => {
+                query.classList.remove("match-query");
             });
         }
     });
@@ -98,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
         elements.forEach(el => {
             let rx = new RegExp(`(${query})`, "gi");
 
-            el.innerHTML = el.innerHTML.replace(rx, `<span class="search-query">$1</span>`);
+            el.innerHTML = el.innerHTML.replace(rx, `<span class="match-query">$1</span>`);
         })
     }
 
