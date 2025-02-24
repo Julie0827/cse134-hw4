@@ -81,13 +81,13 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("click", function (e) {
         if (!searchBox.contains(e.target) && !searchSidebar.contains(e.target)) {
             searchSidebar.classList.remove("active");
-
-            let matchQueries = document.querySelectorAll(".match-query");
-
-            matchQueries.forEach(query => {
-                query.classList.remove("match-query");
-            });
         }
+
+        let matchQueries = document.querySelectorAll(".match-query");
+
+        matchQueries.forEach(query => {
+            query.classList.remove("match-query");
+        });
     });
 
     function highlightQuery(query) {
