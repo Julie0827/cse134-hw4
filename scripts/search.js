@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     async function handleSearchSidebar() {
         resultsContainer.innerHTML = "";
+        console.log(resultsContainer.children.length === 0);
 
         let originalQuery = searchBox.value.trim();
         let query = originalQuery.toLowerCase();
