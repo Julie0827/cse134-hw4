@@ -1,48 +1,48 @@
 @font-face {
     font-family: 'Karla';
-    src: url('../assets/Karla-Regular.ttf') format('truetype');
+    src: url('../assets/fonts/Karla-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Karla';
-    src: url('../assets/Karla-Bold.ttf') format('truetype');
+    src: url('../assets/fonts/Karla-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Karla';
-    src: url('../assets/Karla-Italic.ttf') format('truetype');
+    src: url('../assets/fonts/Karla-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Indie Flower';
-    src: url('../assets/IndieFlower-Regular.ttf') format('truetype');
+    src: url('../assets/fonts/IndieFlower-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Tomorrow';
-    src: url('../assets/Tomorrow-Regular.ttf') format('truetype');
+    src: url('../assets/fonts/Tomorrow-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Tomorrow';
-    src: url('../assets/Tomorrow-Bold.ttf') format('truetype');
+    src: url('../assets/fonts/Tomorrow-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('../assets/Montserrat-Regular.ttf') format('truetype');
+    src: url('../assets/fonts/Montserrat-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Julie</title>
-    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="styles/style.css" media="screen" type="text/css">
     <link rel="stylesheet" href="styles/about.css" media="screen" type="text/css">
+    <script src="search.js"></script>
 </head>
 <body>
     <noscript>
@@ -15,7 +16,7 @@
     <header>
         <nav id="main-nav">
             <a href="index.html">
-                <img id="logo" src="assets/logo.png" alt="Logo">
+                <img id="logo" src="assets/images/logo.png" alt="Logo">
             </a>
             <a class="nav-link" href="index.html">Home</a>
             <a class="nav-link" href="about.html">About Me</a>
@@ -24,13 +25,13 @@
             <a class="nav-link" href="contact.html">Contact</a>
 
             <input type="text" id="search-box" placeholder="Search...">
-            
+
             <nav id="dropdown-nav">
                 <input type="checkbox" id="toggle">
             
                 <label for="toggle" class="menu-icon">
-                    <img src="assets/hamburger.svg" alt="Menu Icon" class="hamburger-icon">
-                    <img src="assets/x.svg" alt="Close Icon" class="close-icon">
+                    <img src="assets/images/hamburger.svg" alt="Menu Icon" class="hamburger-icon">
+                    <img src="assets/images/x.svg" alt="Close Icon" class="close-icon">
                 </label>
     
                 <ul id="dropdown-menu">
@@ -43,7 +44,7 @@
             </nav>
         </nav>
         <audio controls>
-            <source src="assets/background_audio.mp3" type="audio/mpeg">
+            <source src="assets/audio/background_audio.mp3" type="audio/mpeg">
             Sorry, your browswer doesn't support this audio.
         </audio>
     </header>
@@ -55,9 +56,9 @@
 
         <div id="profile-container">
             <picture id="profile">
-                <source srcset="assets/profile-large.jpg" media="(min-width: 1200px)">
-                <source srcset="assets/profile-medium.jpg" media="(min-width: 768px)">
-                <img src="assets/profile-small.jpg" alt="Profile Photo">
+                <source srcset="assets/images/profile-large.jpg" media="(min-width: 1200px)">
+                <source srcset="assets/images/profile-medium.jpg" media="(min-width: 768px)">
+                <img src="assets/images/profile-small.jpg" alt="Profile Photo">
             </picture>
 
             <hgroup id="bio">
