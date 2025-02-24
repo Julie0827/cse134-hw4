@@ -7,41 +7,24 @@
     <link rel="icon" href="assets/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="styles/style.css" media="screen" type="text/css">
     <link rel="stylesheet" href="styles/resume.css" media="screen" type="text/css">
-    <script src="search.js"></script>
+    <script src="scripts/search.js"></script>
 </head>
 <body>
     <noscript>
         <p>JavaScript is disabled. Please enable it for the best experience!</p>
     </noscript>
     <header>
-        <nav id="main-nav">
+        <nav class="main-nav">
             <a href="index.html">
-                <img id="logo" src="assets/images/logo.png" alt="Logo">
+                <img class="logo" src="assets/images/logo.png" alt="Logo">
             </a>
             <a class="nav-link" href="index.html">Home</a>
             <a class="nav-link" href="about.html">About Me</a>
             <a class="nav-link" href="projects.html">Projects</a>
             <a class="nav-link" href="resume.html">Resume</a>
             <a class="nav-link" href="contact.html">Contact</a>
-            
-            <input type="text" id="search-box" placeholder="Search...">
 
-            <nav id="dropdown-nav">
-                <input type="checkbox" id="toggle">
-            
-                <label for="toggle" class="menu-icon">
-                    <img src="assets/images/hamburger.svg" alt="Menu Icon" class="hamburger-icon">
-                    <img src="assets/images/x.svg" alt="Close Icon" class="close-icon">
-                </label>
-    
-                <ul id="dropdown-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+            <input type="text" class="search-box" placeholder="Search...">
         </nav>
         <audio controls>
             <source src="assets/audio/background_audio.mp3" type="audio/mpeg">
@@ -56,6 +39,9 @@
         <iframe src="assets/pdf/resume_Julie.pdf"></iframe>
         <button class="download-btn" type="button" class="btn">Download</button>
     </main>
+    <aside class="search-sidebar">
+        <div class="search-results-container"></div>
+    </aside>
     <footer>
         <ul>
             <li><a href="https://github.com/Julie0827" target="_blank">GitHub</a></li>

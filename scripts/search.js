@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const searchBox = document.querySelector(".search-box");
     const searchSidebar = document.querySelector(".search-sidebar");
-    const resultsContainer = document.querySelector(".search-results");
+    const resultsContainer = document.querySelector(".search-results-container");
 
     const pages = ["index.html", "about.html", "projects.html", "resume.html", "contact.html"];
     const titles = ["HOME", "ABOUT ME", "PROJECTS", "RESUME", "CONTACT"];
@@ -66,12 +66,12 @@ document.addEventListener("DOMContentLoaded", function() {
             let resultItem = document.createElement("div");
 
             resultItem.classList.add("result-item");
-            resultItem.innerHTML = `${result.title} - ${result.preview.replace(result.matchQuery, `<span class="match-query">${result.matchQuery}</span>`)}`;
+            resultItem.innerHTML = `<p>${result.title} - ${result.preview.replace(result.matchQuery, `<span class="match-query">${result.matchQuery}</span>`)}<\p>`;
             
             resultItem.addEventListener("click", () => {
                 window.location.href = result.page + "?search=" + result.originalQuery;
             });
-            
+
             resultsContainer.appendChild(resultItem);
         });
     }
