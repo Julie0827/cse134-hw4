@@ -66,11 +66,12 @@ document.addEventListener("DOMContentLoaded", function() {
             let resultItem = document.createElement("div");
 
             resultItem.classList.add("result-item");
-            resultItem.innerHTML = `<a href="${result.page}?search=${result.originalQuery}">${result.title} - ${result.preview.replace(result.matchQuery, `<span class="match-query">${result.matchQuery}</span>`)}</a>`;
+            resultItem.innerHTML = `${result.title} - ${result.preview.replace(result.matchQuery, `<span class="match-query">${result.matchQuery}</span>`)}`;
             
-            console.log(query);
-            console.log(result.preview);
-
+            resultItem.addEventListener("click", () => {
+                window.location.href = result.page + "?search=" + result.originalQuery;
+            });
+            
             resultsContainer.appendChild(resultItem);
         });
     }
