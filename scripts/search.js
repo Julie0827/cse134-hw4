@@ -6,8 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const pages = ["index.html", "about.html", "projects.html", "resume.html", "contact.html"];
     const titles = ["HOME", "ABOUT ME", "PROJECTS", "RESUME", "CONTACT"];
 
-    const pageCache = {};
-    let controller = new AbortController();
+    // let controller = new AbortController();
 
     async function fetchPageContent(url) {
         if (pageCache[url]) return pageCache[url];
@@ -30,9 +29,18 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    const pageCache = JSON.parse(localStorage.getItem("pageCache")) || {};
+    let isCacheLoaded = Object.keys(pageCache).length === pages.length;
+
+    if (!isCacheLoaded) {
+        for (let page of pages) {
+            fetchPageContent(page);
+        }
+    }
+
     async function handleSearchSidebar() {
-        controller.abort();
-        controller = new AbortController();
+        // controller.abort();
+        // controller = new AbortController();
 
         resultsContainer.innerHTML = "";
 
@@ -97,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
             searchSidebar.classList.remove("active");
         }
 
-        let matchQueries = document.querySelectorAll(".match-query");
+        let matchQueries = document.querySelectorAll(".match-query:not(.search-sidebar .match-query)");
 
         matchQueries.forEach(query => {
             query.classList.remove("match-query");
