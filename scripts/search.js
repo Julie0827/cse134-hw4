@@ -23,7 +23,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     async function handleSearchSidebar() {
+        console.log("Before clearing:", resultsContainer.innerHTML);
         resultsContainer.innerHTML = "";
+        console.log("After clearing:", resultsContainer.innerHTML);
         console.log(resultsContainer.children.length === 0);
 
         let originalQuery = searchBox.value.trim();
@@ -67,11 +69,13 @@ document.addEventListener("DOMContentLoaded", function() {
             let resultItem = document.createElement("div");
 
             resultItem.classList.add("result-item");
-            resultItem.innerHTML = `<p>${result.title} - ${result.preview.replace(result.matchQuery, `<span class="match-query">${result.matchQuery}</span>`)}<\p>`;
+            resultItem.innerHTML = `<p>${result.title} - ${result.preview.replace(result.matchQuery, `<span class="match-query">${result.matchQuery}</span>`)}</p>`;
             
             resultItem.addEventListener("click", () => {
                 window.location.href = result.page + "?search=" + result.originalQuery;
             });
+
+            console.log("HMMMMM:", resultsContainer.innerHTML);
 
             resultsContainer.appendChild(resultItem);
         });
