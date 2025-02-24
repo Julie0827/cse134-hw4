@@ -6,12 +6,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const pages = ["index.html", "about.html", "projects.html", "resume.html", "contact.html"];
     const titles = ["HOME", "ABOUT ME", "PROJECTS", "RESUME", "CONTACT"];
 
-    let latestQuery = "";
     let controller = new AbortController();
 
     async function fetchPageContent(url) {
         try {
-            const response = await fetch(url, { signal: controller.signal });
+            const response = await fetch(url);
             const text = await response.text();
             const parser = new DOMParser();
             const doc = parser.parseFromString(text, "text/html");
@@ -33,10 +32,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let originalQuery = searchBox.value.trim();
         let query = originalQuery.toLowerCase();
-        latestQuery = query;
-
-        controller.abort();
-        controller = new AbortController();
         
         if (query.length < 2) {
             searchSidebar.classList.remove("active");
@@ -52,8 +47,6 @@ document.addEventListener("DOMContentLoaded", function() {
             let title = titles[i];
             let originalContent = await fetchPageContent(page);
             let content = originalContent.toLowerCase();
-
-            if (query !== latestQuery) return;
 
             if (content.includes(query)) {
                 let matchIndex = content.indexOf(query);
@@ -74,7 +67,11 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
+        controller.abort();
+        controller = new AbortController();
+
         resultsContainer.innerHTML = "";
+
         console.log("HMMMMM:", resultsContainer.innerHTML);
 
         searchResults.forEach(result => {
