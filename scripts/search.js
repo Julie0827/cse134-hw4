@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     async function handleSearchSidebar() {
-        console.log("Before clearing:", resultsContainer.innerHTML);
+        controller.abort();
+        controller = new AbortController();
+
         resultsContainer.innerHTML = "";
-        console.log("After clearing:", resultsContainer.innerHTML);
-        console.log(resultsContainer.children.length === 0);
 
         let query = searchBox.value.trim();
         
@@ -74,13 +74,6 @@ document.addEventListener("DOMContentLoaded", function() {
             resultsContainer.innerHTML = "<p>No results found</p>";
             return;
         }
-
-        controller.abort();
-        controller = new AbortController();
-
-        resultsContainer.innerHTML = "";
-
-        console.log("HMMMMM:", resultsContainer.innerHTML);
 
         searchResults.forEach(result => {
             let resultItem = document.createElement("div");
