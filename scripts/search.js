@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let resultItem = document.createElement("div");
 
             resultItem.classList.add("result-item");
-            resultItem.innerHTML = `<p>${result.title} - ${result.preview}</p>`;
+            resultItem.innerHTML = `<p><span class="page-title">${result.title}</span> - ${result.preview}</p>`;
             
             resultItem.addEventListener("click", () => {
                 window.location.href = result.page + "?search=" + result.query;

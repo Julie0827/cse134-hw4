@@ -212,6 +212,14 @@ p {
     background-color: var(--hightlight-background-color, yellow);
 }
 
+.search-sidebar :is(.match-query, .page-title) {
+    font-weight: bold;
+}
+
+.search-sidebar .page-title {
+    color: var(--main-color, pink);
+}
+
 @media (min-width: 1400px) {
     a, p {
         font-size: 1.2rem;
