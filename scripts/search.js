@@ -65,6 +65,8 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
+        console.log("HMMMMM:", resultsContainer.innerHTML);
+
         searchResults.forEach(result => {
             let resultItem = document.createElement("div");
 
@@ -74,8 +76,6 @@ document.addEventListener("DOMContentLoaded", function() {
             resultItem.addEventListener("click", () => {
                 window.location.href = result.page + "?search=" + result.originalQuery;
             });
-
-            console.log("HMMMMM:", resultsContainer.innerHTML);
 
             resultsContainer.appendChild(resultItem);
         });
