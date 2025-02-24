@@ -173,7 +173,7 @@ p {
     right: 3vw;
     top: 20vh;
     width: 30vw;
-    height: 30vh;
+    height: 60vh;
     overflow-y: auto;
     background: white;
     box-shadow: var(--shadow-search);

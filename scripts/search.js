@@ -6,9 +6,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const pages = ["index.html", "about.html", "projects.html", "resume.html", "contact.html"];
     const titles = ["HOME", "ABOUT ME", "PROJECTS", "RESUME", "CONTACT"];
 
+    const pageCache = {};
     let controller = new AbortController();
 
     async function fetchPageContent(url) {
+        if (pageCache[url]) return pageCache[url];
+
         try {
             const response = await fetch(url);
             const text = await response.text();
@@ -18,7 +21,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
             nonVisibleElements.forEach(el => el.remove());
             
-            return doc.body.textContent.trim();
+            const content = doc.body.textContent.trim();
+            pageCache[url] = content;
+
+            return content;
         } catch (error) {
             return "";
         }
@@ -30,8 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("After clearing:", resultsContainer.innerHTML);
         console.log(resultsContainer.children.length === 0);
 
-        let originalQuery = searchBox.value.trim();
-        let query = originalQuery.toLowerCase();
+        let query = searchBox.value.trim();
         
         if (query.length < 2) {
             searchSidebar.classList.remove("active");
@@ -45,20 +50,23 @@ document.addEventListener("DOMContentLoaded", function() {
         for (let i = 0; i < pages.length; i++) {
             let page = pages[i];
             let title = titles[i];
-            let originalContent = await fetchPageContent(page);
-            let content = originalContent.toLowerCase();
+            let content = await fetchPageContent(page);
 
-            if (content.includes(query)) {
-                let matchIndex = content.indexOf(query);
+            let rx = new RegExp(`(${query})`, "gi");
+            let matches = [...content.matchAll(rx)];
+
+            for (let match of matches) {
+                let matchIndex = match.index;
                 let start = Math.max(matchIndex - 20, 0);
                 let end = Math.min(matchIndex + query.length + 20, content.length);
-                let preview = originalContent.substring(start, end);
-                let matchQuery = originalContent.substring(matchIndex, matchIndex + query.length);
+                
+                let preview = content.substring(start, end);
+                preview = preview.replace(rx, `<span class="match-query">$1</span>`);
 
                 if (start != 0) preview = "..." + preview;
                 if (end != content.length) preview = preview + "...";
 
-                searchResults.push({page, title, preview, originalQuery, matchQuery});
+                searchResults.push({page, title, query, preview});
             }
         }
 
@@ -78,10 +86,10 @@ document.addEventListener("DOMContentLoaded", function() {
             let resultItem = document.createElement("div");
 
             resultItem.classList.add("result-item");
-            resultItem.innerHTML = `<p>${result.title} - ${result.preview.replace(result.matchQuery, `<span class="match-query">${result.matchQuery}</span>`)}</p>`;
+            resultItem.innerHTML = `<p>${result.title} - ${result.preview}</p>`;
             
             resultItem.addEventListener("click", () => {
-                window.location.href = result.page + "?search=" + result.originalQuery;
+                window.location.href = result.page + "?search=" + result.query;
             });
 
             resultsContainer.appendChild(resultItem);
