@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         if (searchResults.length === 0) {
-            resultsContainer.innerHTML = "<p>No results found</p>";
+            resultsContainer.innerHTML = "<p>No results found</p><img src='assets/images/search-not-found.png' alt='3D illustration of a bored girl sitting cross-legged with a laptop on her lap'>";
             return;
         }
 
