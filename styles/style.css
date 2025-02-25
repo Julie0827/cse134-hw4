@@ -6,14 +6,6 @@
     display: none;
 }
 
-h1 {
-    font-size: 3.5rem;
-}
-
-h2 {
-    font-size: 2.5rem;
-}
-
 #hamburger-icon {
     display: none;
 }
@@ -79,13 +71,17 @@ header audio {
         &:hover {
             background-color: white;
             border-radius: 10em;
-            font-weight: bold;
             color: var(--main-color, pink);
         }
 
         &:active {
             transform: scale(0.9);
         }
+    }
+
+    a.active {
+        color: var(--main-color-dark, pink);
+        font-weight: bold;
     }
 }
 
@@ -123,6 +119,10 @@ footer ul {
 footer ul li a {
     text-decoration: none;
     color: var(--main-color-dark, pink);
+}
+
+h2 {
+    color: var(--main-color, pink);
 }
 
 p {
@@ -264,165 +264,129 @@ p {
                 linear-gradient(45deg, #ff8c96, #fbc8d4);
 }
 
-@media (min-width: 1400px) {
-    a, p {
-        font-size: 1.2rem;
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    :is(#resume-container, #contact-container) hgroup > p {
+        font-size: 1.5rem;
+    }
+
+    #about-me-container h2 {
+        font-size: 1.8rem;
+    }
+
+    #projects-container h2 {
+        font-size: 2.8rem;
+    }
+
+    main p {
+        font-size: 1.2rem
+    }
+
+    .nav-link {
+        font-size: 1.3rem;
     }
 }
 
 @media (min-width: 1500px) {
-    a, p {
-        font-size: 1.3rem;
+    h1 {
+        font-size: 4rem;
     }
-} 
 
-@media (min-width: 1600px) {
-    a, p {
+    :is(#resume-container, #contact-container) hgroup > p {
+        font-size: 1.8rem;
+    }
+
+    #about-me-container h2 {
+        font-size: 2.2rem;
+    }
+
+    #projects-container h2 {
+        font-size: 3.2rem;
+    }
+
+    main p {
+        font-size: 1.4rem;
+    }
+
+    .nav-link {
         font-size: 1.5rem;
     }
+
+    footer {
+        font-size: 1.2rem;
+    }
 } 
 
-@media (max-width: 1240px) {
+@media (max-width: 1200px) {
     h1 {
         font-size: 3rem;
+    }
+
+    :is(#resume-container, #contact-container) hgroup > p {
+        font-size: 1.4rem;
+    }
+
+    #about-me-container h2 {
+        font-size: 1.8rem;
+    }
+
+    #projects-container h2 {
+        font-size: 2.8rem;
+    }
+
+    main p {
+        font-size: 1.2rem
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .nav-link {
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        display: none;
     }
 }
 
 @media (max-width: 800px) {
-    .main-nav, my-contact {
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 700px) {
-    .main-nav, my-contact {
-        font-size: 0.6rem;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 600px) {
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    .dropdown-nav {
-        display: inline-block;
-        width: 40px;
-    }
-
-    body {
-        padding: 30px;
-        margin: 0;
-        width: 100dvw;
-        height: 100dvh;
-    }
-
     .main-nav>a, audio {
         display: none;
     }
 
-    header nav {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-
     .search-box {
-        width: 70%;
+        width: clamp(100px, 60%, 300px);
     }
 
     .search-box input {
         width: 100%;
     }
+}
 
+@media (max-width: 700px) {
     h1 {
-        font-size: 2em;
+        font-size: 2.5rem;
     }
 
-    h1 + p {
-        font-size: 1em;
+    #about-me-container h2 {
+        font-size: 1.6rem;
     }
 
-    .dropdown-nav {
-        z-index: 100;
+    #projects-container h2 {
+        font-size: 2.2rem;
     }
+}
 
-    .toggle {
-        display: none;
-    }
-    
-    .menu-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        width: 40px;
-        height: 40px;
-        position: relative;
-    }
-    
-    .menu-icon img {
-        width: 100%;
-        height: auto;
-        position: absolute;
-        transition: opacity 0.3s ease;
-    }
-    
-    .hamburger-icon {
-        opacity: 1;
-    }
-    
-    .close-icon {
-        opacity: 0;
-    }
-    
-    .toggle:checked + .menu-icon .hamburger-icon {
-        opacity: 0;
-    }
-    
-    .toggle:checked + .menu-icon .close-icon {
-        opacity: 1;
-    }
-    
-    .dropdown-menu {
-        display: none;
-        flex-direction: column;
-        text-align: center;
-        background: var(--main-color);
-        padding: 10px;
-        position: absolute;
-        width: 100px;
-        right: 30px;
-        top: 70px;
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    
-    .dropdown-menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    .dropdown-menu li a {
-        text-decoration: none;
-        color: white;
-    }
-    
-    .dropdown-menu li a:hover {
-        text-decoration: underline;
-    }
-    
-    .toggle:checked ~ .dropdown-menu {
-        display: flex;
-        opacity: 1;
-        transform: translateY(0);
+@media (max-width: 600px) {
+    main p {
+        font-size: 1rem;
     }
 
     :is(.btn, .clear-btn) {

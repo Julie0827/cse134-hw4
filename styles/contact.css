@@ -20,33 +20,35 @@
     justify-content: space-between;
 }
 
-#contact-container address p {
-    width: 50%;
+my-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 4%;
+    width: 31%;
+}
+
+my-contact p {
+    width: 60%;
     padding: 2em 0;
     text-align: center;
 }
 
-my-contact {
+my-contact > a {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 0 2%;
-    width: 30%;
+    justify-content: flex-start;
+    width: 40%;
 }
 
 my-contact a img {
-    width: 5em;
+    width: 85%;
     animation: bounce 2s linear infinite;
 }
 
 my-contact p a {
     font-weight: bold;
-    color: var(--text-primary-color,black);
-}
-
-my-contact p a:visited {
-    color: var(--text-secondary-color, gray);
+    color: var(--main-color-dark,black);
 }
 
 my-contact[data-contact="github"] {
@@ -59,10 +61,6 @@ my-contact[data-contact="linkedin"] {
 
 my-contact[data-contact="email"] {
     background-color: #faedac;
-}
-
-#contact-container h2 {
-    margin-bottom: -1em;
 }
 
 #contact-container form {
@@ -87,7 +85,7 @@ my-contact[data-contact="email"] {
 #contact-container form textarea {
     width: 100%;
     padding: 1rem 1rem;
-    border: 1px solid var(--main-color, pink);
+    border: 1px solid var(--main-color-dark, hotpink);
     border-radius: 0.5rem;
 }
 
@@ -105,30 +103,6 @@ my-contact[data-contact="email"] {
 }
 
 @media (max-width: 600px) {
-    address {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    my-contact {
-        width: 80%;
-        font-size: 0.7em;
-        justify-content: center;
-    }
-
-    my-contact a {
-        width: 70px;
-    }
-
-    my-contact a img {
-        animation: bounce 2s linear infinite;
-    }
-
-    my-contact p {
-        width: 100%;
-    }
-
     #contact-container form {
         width: 70%;
         gap: 10px;
@@ -146,5 +120,80 @@ my-contact[data-contact="email"] {
         width: 100%;
         padding: 0.1rem;
         border-radius: 0.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    my-contact p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    my-contact p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    my-contact p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    my-contact p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 920px) {
+    my-contact p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 850px) {
+    my-contact p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 800px) {
+    address {
+        flex-direction: column;
+        align-items: center;
+        gap: 4vw;
+    }
+
+    my-contact {
+        width: 60%;
+        padding: 0 8%;
+    }
+
+    my-contact a img {
+        width: 80%;
+    }
+
+    my-contact > p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 700px) {
+    my-contact > p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    my-contact > p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    my-contact > p {
+        font-size: 0.8rem;
     }
 }

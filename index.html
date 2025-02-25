@@ -14,17 +14,17 @@
     <meta property="og:type" content="website">
     <title>Julie</title>
     <link rel="icon" href="assets/images/favicon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css" media="screen" type="text/css">
     <link rel="stylesheet" href="styles/home.css" media="screen" type="text/css">
-    <link rel="preload" as="image" href="assets/images/homepage-intro-large.png" media="(min-width: 1200px)">
-    <link rel="preload" as="image" href="assets/images/homepage-intro-medium.png" media="(min-width: 750px)">
-    <link rel="preload" as="image" href="assets/images/homepage-intro-small.png" media="(max-width: 750px)">
-    <link rel="preload" as="image" href="assets/images/heart.png">
-    <link rel="preload" as="image" href="assets/images/books.png">
-    <link rel="preload" as="image" href="assets/images/ice-cream.png">
-    <link rel="preload" as="image" href="assets/images/gamepad.png">
+    <link rel="preload" as="image" type="image/png" href="assets/images/homepage-intro-large.png" media="(min-width: 1000px)">
+    <link rel="preload" as="image" type="image/png" href="assets/images/homepage-intro-medium.png" media="(min-width: 600px)">
+    <link rel="preload" as="image" type="image/png" href="assets/images/homepage-intro-small.png" media="(max-width: 600px)">
+    <link rel="preload" as="image" type="image/png" href="assets/images/heart.png">
+    <link rel="preload" as="image" type="image/png" href="assets/images/books.png">
+    <link rel="preload" as="image" type="image/png" href="assets/images/ice-cream.png">
+    <link rel="preload" as="image" type="image/png" href="assets/images/gamepad.png">
     <script src="scripts/search.js"></script>
+    <script src="scripts/main.js"></script>
 </head>
 <body>
     <noscript>
@@ -35,7 +35,7 @@
             <a href="index.html">
                 <img class="logo" src="assets/images/logo.png" alt="Logo">
             </a>
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link active" href="index.html">Home</a>
             <a class="nav-link" href="about.html">About Me</a>
             <a class="nav-link" href="projects.html">Projects</a>
             <a class="nav-link" href="resume.html">Resume</a>
@@ -56,8 +56,8 @@
             </hgroup>
             <div id="main-page-image-container">
                 <picture id="main-img">
-                    <source srcset="assets/images/homepage-intro-large.png" media="(min-width: 1200px)">
-                    <source srcset="assets/images/homepage-intro-medium.png" media="(min-width: 768px)">
+                    <source srcset="assets/images/homepage-intro-large.png" media="(min-width: 1000px)">
+                    <source srcset="assets/images/homepage-intro-medium.png" media="(min-width: 600px)">
                     <img src="assets/images/homepage-intro-small.png" alt="3D illustration of a girl using a laptop on a fluffy cloud">
                 </picture>
                 <img class="sub-img top-left" src="assets/images/heart.png" alt="3D illustration of a red heart">

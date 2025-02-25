@@ -7,10 +7,11 @@
     <link rel="icon" href="assets/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="styles/style.css" media="screen" type="text/css">
     <link rel="stylesheet" href="styles/contact.css" media="screen" type="text/css">
-    <link rel="preload" as="image" href="assets/images/github.png">
-    <link rel="preload" as="image" href="assets/images/linkedin.png">
-    <link rel="preload" as="image" href="assets/images/email.png">
+    <link rel="preload" as="image" type="image/png" href="assets/images/github.png">
+    <link rel="preload" as="image" type="image/png" href="assets/images/linkedin.png">
+    <link rel="preload" as="image" type="image/png" href="assets/images/email.png">
     <script src="scripts/search.js"></script>
+    <script src="scripts/main.js"></script>
 </head>
 <body>
     <noscript>
@@ -25,7 +26,7 @@
             <a class="nav-link" href="about.html">About Me</a>
             <a class="nav-link" href="projects.html">Projects</a>
             <a class="nav-link" href="resume.html">Resume</a>
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link active" href="contact.html">Contact</a>
 
             <input type="text" class="search-box" placeholder="Search...">
         </nav>
@@ -41,26 +42,25 @@
         </hgroup>
         <address>
             <my-contact data-contact="github">
-                <a href="https://github.com/Julie0827">
+                <a href="https://github.com/Julie0827" target="_blank">
                     <img src="../assets/images/github.png" alt="3D illustration of GitHub logo">
                 </a>
                 <p>Visit my <a href="https://github.com/Julie0827" target="_blank">GitHub</a></p>
             </my-contact>
-            <my-contact data-contact="linkedin">
+            <my-contact data-contact="linkedin" target="_blank">
                 <a href="https://www.linkedin.com/in/julie-hong-065579298/">
                     <img src="../assets/images/linkedin.png" alt="3D illustration of LinkedIn logo">
                 </a>
                 <p>Connect with me on <a href="https://www.linkedin.com/in/julie-hong-065579298/" target="_blank">LinkedIn</a></p>
             </my-contact>
             <my-contact data-contact="email">
-                <a href="mailto:joh046@ucsd.edu">
+                <a href="mailto:joh046@ucsd.edu" target="_blank">
                     <img src="../assets/images/email.png" alt="3D illustration of email icon">
                 </a>
-                <p>Email me at <a href="mailto:joh046@ucsd.edu" target="_blank">joh046@ucsd.edu</a></p>
+                <p>Email me at <a href="mailto:joh046@ucsd.edu" target="_blank">my UCSD email</a></p>
             </my-contact>
         </address>
 
-        <h2> Contact Form</h2>
         <form action="https://formspree.io/f/mwpvbryr" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
