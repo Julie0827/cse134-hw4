@@ -61,11 +61,7 @@
 }
 
 .project picture img {
-    width: 60%;
-}
-
-.project video {
-    width: 60%;
+    width: 70%;
 }
 
 .top-btn {
@@ -155,10 +151,6 @@
     }
 
     .project picture img {
-        width: 80%;
-    }
-    
-    .project video {
         width: 80%;
     }
 
