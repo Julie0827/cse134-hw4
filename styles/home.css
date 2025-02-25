@@ -68,22 +68,6 @@
     animation: rotate-right 2.5s linear infinite;
 }
 
-#project-thumbnail-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#project-thumbnail-container picture {
-    width: 40%;
-}
-
-#project-thumbnail-container picture img {
-    width: 100%;
-    border-radius: 3em;
-    box-shadow: var(--shadow-card, none);
-}
-
 
 @media (max-width: 600px) {
     #main-page-container {
@@ -100,19 +84,5 @@
 
     #main-page-container hgroup {
         width: 100%;
-    }
-
-    #project-thumbnail-container {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    #project-thumbnail-container picture {
-        width: 80%;
-    }
-
-    #main-page-container button {
-        padding: 15px 20px;
-        font-size: 0.6em;
     }
 }
