@@ -80,13 +80,14 @@
 
             <input type="hidden" id="bot-field" name="possible_bot" value="true">
 
-            <div class="form-messages-container">
-                <p class="error-message">Oops! The name field can’t be empty.</p>
-                <p class="error-message">Looks like you forgot to add your email.</p>
-                <p class="error-message">Don’t forget to leave a comment!</p>
-                <p class="error-message">Hmm… that doesn’t seem like a valid email.</p>
-                <p id="info-message">You can expect a response within 24 hours.</p>
+            <div class="error-messages-container hidden">
+                <p class="error-message hidden">Oops! The <strong>name</strong> field can’t be empty.</p>
+                <p class="error-message hidden">Looks like you forgot to add your <strong>email</strong>.</p>
+                <p class="error-message hidden">Don’t forget to leave a <strong>comment</strong>!</p>
+                <p class="error-message hidden">Hmm… that doesn’t seem like a <strong>valid email</strong>.</p>
             </div>
+
+            <p class="info-message">You can expect a response <strong>within 24 hours</strong>.</p>
 
             <div class="form-buttons-container">
                 <button type="button" class="clear-btn">Clear</button>

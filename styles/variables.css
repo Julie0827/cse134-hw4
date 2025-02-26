@@ -4,7 +4,6 @@
     --main-color-light: #f5c6cc;
     --main-color-dark: #e58693;
     --text-primary-color: #202020;
-    --text-secondary-color: #707070;
     --warning-color: #fc1225;
     --hightlight-background-color: yellow;
     --hightlight-text-color: #e8028c;
@@ -16,8 +15,8 @@
     --font-input: 'Quicksand';
     --font-button: 'Tomorrow';
 
-    --gradient-primary: linear-gradient(to right, #DD5E89 0%, #F7BB97 51%, #DD5E89 100%);
-    --gradient-secondary: linear-gradient(to right, #A4508B 0%, #F7BB97 51%, #A4508B 100%);
+    --gradient-primary: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    --gradient-secondary: linear-gradient(45deg, #ff8c96, #fbc8d4);
 
     --shadow-card: 5px 5px 5px 0 #0003, 5px 5px 5px 0 rgba(0 0 0 / 5%);
     --shadow-form: 0 1px 5px 0 #0003, 0 1px 5px 0 rgba(0 0 0 / 5%);

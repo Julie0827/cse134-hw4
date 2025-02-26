@@ -2,12 +2,22 @@
 @import url("font.css");
 @import url("variables.css");
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
 html {
     font-size: 16px;
 }
 
 h1 {
     font-size: 2.6rem;
+    margin-bottom: 1.6rem;
 }
 
 p {
@@ -141,25 +151,26 @@ h2 {
     color: var(--main-color, pink);
 }
 
-:is(.btn, .top-btn, .download-btn, .clear-btn) {
+:is(.btn, .top-btn, .clear-btn) {
     font-family: var(--font-button, 'Arial', sans-serif);
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
 }
 
-:is(.btn, .top-btn, .repo-btn, .download-btn):hover {
+:is(.btn, .top-btn, .repo-btn):hover {
     transform: scale(1.05);
 }
 
-:is(.btn, .top-btn, .repo-btn, .download-btn):active {
+:is(.btn, .top-btn, .repo-btn):active {
     transform: scale(0.95);
 }
 
 .btn {
-    padding: 1.5em 2.5em;
+    font-size: 0.8rem;
+    padding: 1.5em 3em;
     border: none;
-    border-radius: 10em;
+    border-radius: 0.5em;
     background: var(--gradient-primary, pink);
     box-shadow: var(--shadow-button, none);
     color: var(--text-primary-color, black);
@@ -264,7 +275,7 @@ h2 {
 
 :is(#comments, .search-sidebar)::-webkit-scrollbar-thumb {
     background: url("../assets/images/scrollbar.svg") center no-repeat,
-                linear-gradient(45deg, #ff9a9e, #fad0c4);
+                var(--gradient-secondary, linear-gradient(45deg, #ff9a9e, #fad0c4));
     border-radius: 10px;
     cursor: pointer;
 
@@ -273,7 +284,7 @@ h2 {
 
 :is(#comments, .search-sidebar)::-webkit-scrollbar-thumb:hover {
     background: url("../assets/images/scrollbar.svg") center no-repeat,
-                linear-gradient(45deg, #ff8c96, #fbc8d4);
+                var(--gradient-secondary, linear-gradient(45deg, #ff8c96, #fbc8d4));
 }
 
 @media (min-width: 1900px) {
@@ -363,6 +374,14 @@ h2 {
 
     .search-box {
         width: clamp(100px, 60%, 320px);
+    }
+
+    .btn, .clear-btn {
+        font-size: 0.7rem;
+    }
+
+    .btn {
+        padding: 1rem 2rem;
     }
 }
 

@@ -13,8 +13,9 @@
     justify-content: center;
     list-style: none;
     flex-flow: row nowrap;
-    gap: 4em;
+    gap: 4rem;
     padding-bottom: 4em;
+    font-size: 1.3rem;
 }
 
 #project-nav a {
@@ -97,17 +98,7 @@
     background-position: center;
 }
 
-@media (max-width: 700px) {
-    #project-nav {
-        font-size: 1.2rem;
-    }
-}
-
 @media (max-width: 600px) {
-    #project-nav {
-        font-size: 1rem;
-    }
-
     #projects-container nav ul {
         gap: 1em;
     }
