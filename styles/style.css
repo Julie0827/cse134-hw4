@@ -2,12 +2,21 @@
 @import url("font.css");
 @import url("variables.css");
 
-.dropdown-nav {
-    display: none;
+html {
+    font-size: 16px;
 }
 
-#hamburger-icon {
-    display: none;
+h1 {
+    font-size: 2.6rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.nav-link {
+    font-size: 1.05rem;
 }
 
 ul:has(a) {
@@ -21,10 +30,9 @@ body {
     align-items: center;
     gap: 5em;
     background-color: var(--background-color, white);
-    font-size:  var(--font-size-base, 16px);
     font-family: var(--font-primary, Arial, sans-serif);
     color: var(--text-primary-color, black);
-    padding: 2rem;
+    padding: 1vw 3vw;
     word-spacing: 0.2em;
 }
 
@@ -96,13 +104,13 @@ header audio {
     border: 2px solid var(--main-color, pink);
     border-radius: 50px;
     background: url('../assets/images/search.png') no-repeat right 1em center;
-    background-size: 1.5em;
+    background-size: 1.5rem;
 }
 
 :is(input, textarea) {
     box-sizing: border-box;
     font-family: var(--font-input, Arial, sans-serif);
-    font-size: 1em;
+    font-size: 1rem;
     color: var(--font-primary, black);
     outline: none;
 }
@@ -110,7 +118,11 @@ header audio {
 .search-box:focus {
     border-width: 3px;
     background: url('../assets/images/search-active.png') no-repeat right 1em center;
-    background-size: 1.3em;
+    background-size: 1.3rem;
+}
+
+footer {
+    font-size: 0.9rem;
 }
 
 footer ul {
@@ -127,10 +139,6 @@ footer ul li a {
 
 h2 {
     color: var(--main-color, pink);
-}
-
-p {
-    line-height: 1.5;
 }
 
 :is(.btn, .top-btn, .download-btn, .clear-btn) {
@@ -245,16 +253,16 @@ p {
 
 .search-sidebar:has(img) p {
     margin: 0;
-    font-size: 3vw;
+    font-size: 2rem;
     font-weight: bold;
     white-space: nowrap;
 }
 
-.search-sidebar::-webkit-scrollbar {
+:is(#comments, .search-sidebar)::-webkit-scrollbar {
     width: 1.5rem;
 }
 
-.search-sidebar::-webkit-scrollbar-thumb {
+:is(#comments, .search-sidebar)::-webkit-scrollbar-thumb {
     background: url("../assets/images/scrollbar.svg") center no-repeat,
                 linear-gradient(45deg, #ff9a9e, #fad0c4);
     border-radius: 10px;
@@ -263,96 +271,74 @@ p {
     background-size: 1.5rem, 1.5rem, cover;
 }
 
-.search-sidebar::-webkit-scrollbar-thumb:hover {
+:is(#comments, .search-sidebar)::-webkit-scrollbar-thumb:hover {
     background: url("../assets/images/scrollbar.svg") center no-repeat,
                 linear-gradient(45deg, #ff8c96, #fbc8d4);
 }
 
-@media (min-width: 1200px) {
-    h1 {
-        font-size: 3.5rem;
-    }
-
-    :is(#resume-container, #contact-container) hgroup > p {
-        font-size: 1.5rem;
-    }
-
-    #about-me-container h2 {
-        font-size: 1.8rem;
-    }
-
-    #projects-container h2 {
-        font-size: 2.8rem;
-    }
-
-    main p {
-        font-size: 1.2rem
-    }
-
-    .nav-link {
-        font-size: 1.3rem;
+@media (min-width: 1900px) {
+    html {
+        font-size: 22.5px;
     }
 }
 
-@media (min-width: 1500px) {
-    h1 {
-        font-size: 4rem;
+@media (max-width: 1900px) {
+    html {
+        font-size: 22px;
     }
+}
 
-    :is(#resume-container, #contact-container) hgroup > p {
-        font-size: 1.8rem;
+@media (max-width: 1800px) {
+    html {
+        font-size: 21.5px;
     }
+}
 
-    #about-me-container h2 {
-        font-size: 2.2rem;
+@media (max-width: 1700px) {
+    html {
+        font-size: 21px;
     }
+}
 
-    #projects-container h2 {
-        font-size: 3.2rem;
+@media (max-width: 1600px) {
+    html {
+        font-size: 20.5px;
     }
+}
 
-    main p {
-        font-size: 1.4rem;
+@media (max-width: 1500px) {
+    html {
+        font-size: 20px;
     }
+}
 
-    .nav-link {
-        font-size: 1.5rem;
+@media (max-width: 1400px) {
+    html {
+        font-size: 19.5px;
     }
+}
 
-    footer {
-        font-size: 1.2rem;
+@media (max-width: 1300px) {
+    html {
+        font-size: 19px;
     }
-} 
+}
 
 @media (max-width: 1200px) {
-    h1 {
-        font-size: 3rem;
+    html {
+        font-size: 18.5px;
     }
+}
 
-    :is(#resume-container, #contact-container) hgroup > p {
-        font-size: 1.4rem;
-    }
-
-    #about-me-container h2 {
-        font-size: 1.8rem;
-    }
-
-    #projects-container h2 {
-        font-size: 2.8rem;
-    }
-
-    main p {
-        font-size: 1.2rem
-    }
-
-    .nav-link {
-        font-size: 1.2rem;
+@media (max-width: 1100px) {
+    html {
+        font-size: 18px;
     }
 }
 
 @media (max-width: 1000px) {
-    .nav-link {
-        font-size: 1.1rem;
+    html {
+        font-size: 17.5px;
     }
 
     .logo {
@@ -360,48 +346,34 @@ p {
     }
 }
 
+@media (max-width: 900px) {
+    html {
+        font-size: 17px;
+    }
+}
+
 @media (max-width: 800px) {
+    html {
+        font-size: 18px;
+    }
+
     .main-nav>a, audio {
         display: none;
     }
 
     .search-box {
-        width: clamp(100px, 60%, 300px);
-    }
-
-    .search-box input {
-        width: 100%;
+        width: clamp(100px, 60%, 320px);
     }
 }
 
 @media (max-width: 700px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    #about-me-container h2 {
-        font-size: 1.6rem;
-    }
-
-    #projects-container h2 {
-        font-size: 2.2rem;
+    html {
+        font-size: 17px;
     }
 }
 
 @media (max-width: 600px) {
-    main p {
-        font-size: 1rem;
-    }
-
-    footer {
-        font-size: 0.8rem;
-    }
-
-    :is(.btn, .clear-btn) {
-        font-size: 0.6em;
-    }
-
-    .btn {
-        padding: 10px 15px;
+    html {
+        font-size: 16px;
     }
 }
