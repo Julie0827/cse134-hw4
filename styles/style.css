@@ -35,15 +35,19 @@ main {
 }
 
 .logo {
+    display: flex;
+}
+
+.logo img {
     width: 8vw;
     transition: transform 0.2s ease-in-out;
 }
 
-.logo:hover {
+.logo img:hover {
     transform: scale(1.1);
 }
 
-.logo:active {
+.logo img:active {
     transform: scale(0.9);
 }
 
