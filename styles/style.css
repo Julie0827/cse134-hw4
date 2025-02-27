@@ -42,7 +42,7 @@ body {
     background-color: var(--background-color, white);
     font-family: var(--font-primary, Arial, sans-serif);
     color: var(--text-primary-color, black);
-    padding: 1vw 3vw;
+    padding: 20px max(3vw, 20px);
     word-spacing: 0.2em;
 }
 

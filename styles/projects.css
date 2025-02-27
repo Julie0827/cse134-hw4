@@ -13,9 +13,10 @@
     justify-content: center;
     list-style: none;
     flex-flow: row nowrap;
-    gap: 4rem;
+    gap: 3rem;
     padding-bottom: 4em;
     font-size: 1.3rem;
+    cursor: pointer;
 }
 
 #project-nav a {
@@ -40,7 +41,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
     padding: 8em 0;
     border-bottom: 2px solid var(--main-color-light);
 }
@@ -60,23 +61,25 @@
 }
 
 .top-btn {
-    color: var(--text-primary-color, black);
+    color: var(--main-color, black);
     text-decoration: underline;
     background-color: transparent;
     border: none;
+    font-size: 1rem;
 }
 
 .repo-btn {
     align-self: flex-end;
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 1rem;
     color: var(--text-primary-color, black);
-    padding: 0.5em 1em;
+    padding: 0.5rem 1rem;
     text-decoration: none;
-    background-color: white;
-    border-radius: 1em;
+    background: var(--gradient-primary);
+    border-radius: 0.5rem;
     box-shadow: var(--shadow-button, none);
+    font-size: 1rem;
 }
 
 .repo-btn:hover {
@@ -84,6 +87,7 @@
 }
 
 .repo-btn:active {
+    background: var(--gradient-secondary);
     box-shadow: var(--shadow-button-active, none);
 }
 
@@ -98,49 +102,18 @@
     background-position: center;
 }
 
-@media (max-width: 600px) {
-    #projects-container nav ul {
-        gap: 1em;
+@media (max-width: 1000px) {
+    .project picture img {
+        width: 90%;
     }
+}
 
+@media (max-width: 800px) {
     .repo-btn {
-        align-self: flex-end;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        color: var(--text-primary-color, black);
-        padding: 3px 8px;
-        text-decoration: none;
-        background-color: white;
-        border-radius: 50px;
-        box-shadow: var(--shadow-button, none);
-        font-size: 10px
-    }
-
-    .repo-btn::before {
-        content: "";
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        background-image: url("../assets/images/github-cat.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
+        align-self: center;
     }
 
     .project picture img {
-        width: 80%;
-    }
-
-    .project {
-        gap: 1em;
-    }
-
-    #projects {
-        gap: 6em;
-    }
-
-    #projects-container {
-        gap: 2em;
+        width: 90%;
     }
 }
