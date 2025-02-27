@@ -401,8 +401,7 @@ h2 {
     }
 
     .search-sidebar {
-        left: 50%;
-        transform: translateX(-50%);
+        left: 20px;
         width: 75%;
         height: 60%;
     }
