@@ -72,9 +72,9 @@
     align-self: flex-end;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.6rem;
     color: var(--text-primary-color, black);
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1rem;
     text-decoration: none;
     background: var(--gradient-primary);
     border-radius: 0.5rem;

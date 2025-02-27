@@ -195,9 +195,9 @@ h2 {
     align-items: flex-start;
     position: absolute;
     right: 3vw;
-    top: 20vh;
-    width: 40vw;
-    height: 60vh;
+    top: 6rem;
+    width: max(600px, 42vw);
+    height: max(460px, 60vh);
     overflow-y: auto;
     background: white;
     box-shadow: var(--shadow-search);
@@ -264,12 +264,11 @@ h2 {
 }
 
 .search-sidebar img {
-    width: clamp(100px, 60%, 200px);
+    width: 35%;
 }
 
 .search-sidebar:has(img) p {
-    margin: 0;
-    font-size: 2rem;
+    font-size: max(1.8rem, 36px);
     font-weight: bold;
     white-space: nowrap;
 }
@@ -376,6 +375,10 @@ h2 {
     .logo {
         display: none;
     }
+
+    .search-sidebar {
+        top: 5rem;
+    }
 }
 
 @media (max-width: 900px) {
@@ -397,6 +400,17 @@ h2 {
         width: clamp(100px, 60%, 320px);
     }
 
+    .search-sidebar {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 75%;
+        height: 60%;
+    }
+
+    .search-sidebar:has(img) p {
+        font-size: 1.6rem;
+    }
+
     .btn, .clear-btn {
         font-size: 0.7rem;
     }
@@ -415,5 +429,9 @@ h2 {
 @media (max-width: 600px) {
     html {
         font-size: 16px;
+    }
+
+    .search-sidebar img {
+        width: 45%;
     }
 }
