@@ -71,11 +71,11 @@ my-contact[data-contact="email"] {
 #contact-form {
     box-sizing: border-box;
     background-color: white;
-    width: 70%;
+    width: max(50%, 600px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.5em;
+    gap: 1.5rem;
     padding: 3rem;
     box-shadow: var(--shadow-form, none);
 }
@@ -89,7 +89,7 @@ fieldset {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.8em;
+    gap: 0.5rem;
 }
 
 .required-indicator {
@@ -98,7 +98,6 @@ fieldset {
 }
 
 #contact-form label {
-    font-size: 1.2rem;
     text-align: right;
     font-weight: bold;
 }
@@ -106,7 +105,7 @@ fieldset {
 #contact-form input,
 #contact-form textarea {
     width: 100%;
-    padding: 1rem 1rem;
+    padding: 0.7rem 0.7rem;
     border: 1px solid var(--main-color-dark, hotpink);
     border-radius: 0.5rem;
 }
@@ -137,19 +136,7 @@ fieldset {
     text-decoration: underline;
     background-color: transparent;
     border: none;
-    font-size: 0.8rem;
-}
-
-@media (max-width:  1200px) {
-    #contact-form {
-        width: 80%;
-    }
-}
-
-@media (max-width:  950px) {
-    #contact-form {
-        width: 90%;
-    }
+    font-size: 0.75rem;
 }
 
 @media (max-width: 800px) {
@@ -166,6 +153,10 @@ fieldset {
 
     my-contact a img {
         width: 75%;
+    }
+
+    #contact-form {
+        width: 95%;
     }
 }
 
