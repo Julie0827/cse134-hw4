@@ -80,6 +80,10 @@ my-contact[data-contact="email"] {
     box-shadow: var(--shadow-form, none);
 }
 
+fieldset {
+    border: none;
+}
+
 .form-field {
     width: 100%;
     display: flex;
