@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let query = searchBox.value.trim();
         
-        if (query.length < 2) {
+        if (query.length < 1) {
             searchSidebar.classList.remove("active");
             return;
         }
