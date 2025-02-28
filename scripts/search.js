@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchBox = document.querySelector(".search-box");
     const searchSidebar = document.querySelector(".search-sidebar");
     const resultsContainer = document.querySelector(".search-results-container");
+    const dropdownNavBtn = document.querySelector(".dropdown-nav-btn");
 
     const pages = ["index.html", "about.html", "projects.html", "resume.html", "contact.html"];
     const titles = ["HOME", "ABOUT ME", "PROJECTS", "RESUME", "CONTACT"];
@@ -96,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
     searchBox.addEventListener("click", handleSearchSidebar);
 
     document.addEventListener("click", function (e) {
-        if (!searchBox.contains(e.target) && !searchSidebar.contains(e.target)) {
+        if (!searchBox.contains(e.target) && !searchSidebar.contains(e.target) && !dropdownNavBtn.containse(e.target)) {
             searchSidebar.classList.remove("active");
         }
 
