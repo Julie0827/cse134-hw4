@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
     searchBox.addEventListener("click", handleSearchSidebar);
 
     document.addEventListener("click", function (e) {
-        if (!searchBox.contains(e.target) && !searchSidebar.contains(e.target) && !dropdownNavBtn.containse(e.target)) {
+        if (!searchBox.contains(e.target) && !searchSidebar.contains(e.target) && !dropdownNavBtn.contains(e.target)) {
             searchSidebar.classList.remove("active");
         }
 
