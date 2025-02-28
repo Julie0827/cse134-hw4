@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form no js | Julie</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles/style.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="styles/variables.css" media="screen" type="text/css">
+    <link rel="preload" as="image" type="image/png" href="assets/images/github.png">
+    <link rel="preload" as="image" type="image/png" href="assets/images/linkedin.png">
+    <link rel="preload" as="image" type="image/png" href="assets/images/email.png">
+    <style>
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        #contact-form {
+            box-sizing: border-box;
+            background-color: white;
+            width: max(50%, 600px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 3rem;
+            box-shadow: var(--shadow-form, none);
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        .form-field {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .required-indicator {
+            color: red;
+            margin-left: 0.2em;
+        }
+
+        #contact-form label {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        #contact-form input,
+        #contact-form textarea {
+            width: 100%;
+            padding: 0.7rem 0.7rem;
+            border: 1px solid var(--main-color-dark, hotpink);
+            border-radius: 0.5rem;
+        }
+
+        .error-messages-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .error-message {
+            color: var(--warning-color, red);
+        }
+
+        .error-message, .info-message {
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .info-message strong {
+            color: var(--main-color, pink);
+        }
+
+        #contact-form .form-buttons-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .clear-btn {
+            color: var(--warning-color, red);
+            text-decoration: underline;
+            background-color: transparent;
+            border: none;
+            font-size: 0.75rem;
+        }
+
+        :required:placeholder-shown {
+            background-color: var(--background-color, #fcfafc);
+        }
+
+        :optional:placeholder-shown{
+            background-color: #f0f5fa;
+        }
+
+        :is(input, textarea):user-invalid {
+            border: 2px solid red !important;
+        }
+
+        .error-message {
+            display: none;
+        }
+
+        fieldset#name-field:has(:user-invalid) ~ fieldset output#name-error,
+        fieldset#email-field:has(:user-invalid) ~ fieldset output#email-error,
+        fieldset#phone-field:has(:user-invalid) ~ fieldset output#phone-error,
+        fieldset#comments-field:has(:user-invalid) ~ fieldset output#comments-error {
+            display: block;
+        }
+
+        @media (max-width: 800px) {
+            address {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            my-contact {
+                width: 60%;
+                padding: 0 8%;
+            }
+
+            my-contact a img {
+                width: 75%;
+            }
+
+            #contact-form {
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #contact-form .form-buttons-container {
+                justify-content: space-around;
+            }
+        }
+
+        @media (max-width: 450px) {
+            #contact-form .form-buttons-container {
+                justify-content: space-around;
+            }
+
+            #contact-form .btn {
+                padding: 0.8rem 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <noscript>
+        <p>JavaScript is disabled. Please enable it for the best experience!</p>
+    </noscript>
+    <header>
+        <nav class="main-nav">
+            <a class="logo" href="index.html">
+                <img src="assets/images/logo.png" alt="Logo">
+            </a>
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="about.html">About Me</a>
+            <a class="nav-link" href="projects.html">Projects</a>
+            <a class="nav-link" href="resume.html">Resume</a>
+            <a class="nav-link active" href="contact.html">Contact</a>
+
+            <input type="text" class="search-box" placeholder="Search...">
+
+            <img class="dropdown-nav-btn" src="assets/images/hamburger.svg" alt="Open navigation menu">
+        </nav>
+    </header>
+    <main>
+        <h1>Form with no JavaScript</h1>
+        <!-- <form id="contact-form" action="https://formspree.io/f/mwpvbryr" method="POST"> -->
+        <form id="contact-form" action="https://httpbin.org/post" method="POST">
+            <fieldset id="name-field" class="form-field">
+                <label for="name">Name<span class="required-indicator">*</span></label>
+                <input type="text" id="name" name="name" required minlength="2" maxlength="50" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ' \-]+$" placeholder="Enter your name">
+            </fieldset>
+            
+            <fieldset id="email-field" class="form-field">
+                <label for="email">Email<span class="required-indicator">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </fieldset>
+
+            <fieldset id="phone-field" class="form-field">
+                <label for="phone">Phone (Optional)</label>
+                <input type="tel" id="phone" name="phone" pattern="\d{3}-\d{3}-\d{4}" placeholder="123-456-7890">
+            </fieldset>
+
+            <fieldset id="comments-field" class="form-field">
+                <label for="comments">Comments<span class="required-indicator">*</span></label>
+                <textarea id="comments" name="comments" rows="5" required minlength="10" maxlength="500" placeholder="Your message here... (Max: 500 characters)"></textarea>
+                <!-- a-zA-Z0-9\s.,!?@#$%^&*(){}\[\]";:<>/?-+-->
+            </fieldset>
+
+            <input type="hidden" id="bot-field" name="possible_bot" value="true">
+
+            <fieldset class="error-messages-container">
+                <output id="name-error" class="error-message" for="name">Please enter a valid name (2-50 letters, no numbers or symbols)</output>
+                <output id="email-error" class="error-message" for="email">Please enter a valid email address. (e.g., name@example.com)</output>
+                <output id="phone-error" class="error-message" for="phone">Please enter a valid phone number or leave blank. (e.g., 123-456-7890)</output>
+                <output id="comments-error" class="error-message" for="comments">Please enter a valid comment (10-500 characters, using letters, numbers, and standard symbols)</output>
+            </fieldset>
+
+            <output id="comments-info" class="info-message" for="comments">You can enter up to <strong>500 characters</strong> in the comments field.</output>
+
+            <div class="form-buttons-container">
+                <button type="reset" class="clear-btn">Clear</button>
+                <button type="submit" class="btn">Send Message</button>
+            </div>
+        </form>
+    </main>
+    <aside class="search-sidebar">
+        <div class="search-results-container"></div>
+    </aside>
+    <nav class="dropdown-nav hide">
+        <a class="dropdown-nav-link" href="index.html">Home</a>
+        <a class="dropdown-nav-link" href="about.html">About Me</a>
+        <a class="dropdown-nav-link" href="projects.html">Projects</a>
+        <a class="dropdown-nav-link" href="resume.html">Resume</a>
+        <a class="dropdown-nav-link active" href="contact.html">Contact</a>
+    </nav>
+    <footer>
+        <ul>
+            <li><a href="https://github.com/Julie0827" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/julie-hong-065579298/" target="_blank">LinkedIn</a></li>
+            <li><a href="mailto:joh046@ucsd.edu" target="_blank">joh046@ucsd.edu</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

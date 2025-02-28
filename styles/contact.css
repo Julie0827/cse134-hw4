@@ -166,4 +166,13 @@ fieldset {
     }
 }
 
+@media (max-width: 450px) {
+    #contact-form .form-buttons-container {
+        justify-content: space-around;
+    }
+
+    #contact-form .btn {
+        padding: 0.8rem 1rem;
+    }
+}
 
