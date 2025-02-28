@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
     async function handleSearchSidebar() {
         resultsContainer.innerHTML = "";
 
-        let query = searchBox.value.trim();
+        let query = searchBox.value.trim().replace(/’/g, "'");
         
         if (query.length < 1) {
             searchSidebar.classList.remove("active");
