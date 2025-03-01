@@ -118,7 +118,7 @@ fieldset {
     animation: flash 1.5s ease-in-out;
 }
 
-.error-messages-container {
+#error-messages-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,8 +129,9 @@ fieldset {
     color: var(--warning-color, red);
 }
 
-.info-message strong {
+#char-counter {
     color: var(--main-color, pink);
+    font-weight: bold;
 }
 
 #contact-form .form-buttons-container {

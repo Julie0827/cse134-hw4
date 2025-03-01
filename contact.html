@@ -65,10 +65,10 @@
         </address>
 
         <!-- <form id="contact-form" action="https://formspree.io/f/mwpvbryr" method="POST"> -->
-        <form id="contact-form" action="https://httpbin.org/post" method="POST">    
+        <form id="contact-form" action="https://httpbin.org/post" method="POST" novalidate>    
             <fieldset class="form-field">
                 <label for="name">Name<span class="required-indicator">*</span></label>
-                <input type="text" id="name" name="name" required maxlength="50" placeholder="Enter your name">
+                <input type="text" id="name" name="name" required minlength="2" maxlength="50" placeholder="Enter your name">
             </fieldset>
             
             <fieldset class="form-field">
@@ -78,21 +78,18 @@
 
             <fieldset class="form-field">
                 <label for="comments">Comments<span class="required-indicator">*</span></label>
-                <textarea id="comments" name="comments" rows="5" required placeholder="Your message here..."></textarea>
+                <textarea id="comments" name="comments" rows="5" required minlength="10" maxlength="300" placeholder="Your message here..."></textarea>
             </fieldset>
 
             <input type="hidden" id="bot-field" name="possible_bot" value="true">
 
-            <fieldset class="error-messages-container">
-                <output id="name-char-error" class="error-message hidden" for="name"></output>
-                <output id="name-submit-error" class="error-message hidden" for="name"></output>
-                <output id="email-char-error" class="error-message hidden" for="email"></output>
-                <output id="email-submit-error" class="error-message hidden" for="email"></output>
-                <output id="comments-char-error" class="error-message hidden" for="comments"></output>
-                <output id="comments-submit-error" class="error-message hidden" for="comments"></output>
-            </fieldset>
+            <div id="error-messages-container">
+                <output id="name-error" class="error-message hidden"></output>
+                <output id="email-error" class="error-message hidden"></output>
+                <output id="comments-error" class="error-message hidden"></output>
+            </div>
 
-            <output id="comments-info" class="info-message hidden" for="comments"></output>
+            <output id="comments-info" class="info-message">You have <span id="char-counter"></span> left in the comments field</output>
 
             <div class="form-buttons-container">
                 <button type="reset" class="clear-btn">Clear</button>

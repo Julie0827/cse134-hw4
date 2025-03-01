@@ -197,8 +197,7 @@
 
             <fieldset id="comments-field" class="form-field">
                 <label for="comments">Comments<span class="required-indicator">*</span></label>
-                <textarea id="comments" name="comments" rows="5" required minlength="10" maxlength="500" placeholder="Your message here... (Max: 500 characters)"></textarea>
-                <!-- a-zA-Z0-9\s.,!?@#$%^&*(){}\[\]";:<>/?-+-->
+                <textarea id="comments" name="comments" rows="5" required minlength="10" maxlength="300" placeholder="Your message here... (Max: 300 characters)"></textarea>
             </fieldset>
 
             <input type="hidden" id="bot-field" name="possible_bot" value="true">
@@ -207,10 +206,10 @@
                 <output id="name-error" class="error-message" for="name">Please enter a valid name (2-50 letters, no numbers or symbols)</output>
                 <output id="email-error" class="error-message" for="email">Please enter a valid email address. (e.g., name@example.com)</output>
                 <output id="phone-error" class="error-message" for="phone">Please enter a valid phone number or leave blank. (e.g., 123-456-7890)</output>
-                <output id="comments-error" class="error-message" for="comments">Please enter a valid comment (10-500 characters, using letters, numbers, and standard symbols)</output>
+                <output id="comments-error" class="error-message" for="comments">Please enter a valid comment (10-300 characters, using letters, numbers, and standard symbols)</output>
             </fieldset>
 
-            <output id="comments-info" class="info-message" for="comments">You can enter up to <strong>500 characters</strong> in the comments field.</output>
+            <output id="comments-info" class="info-message" for="comments">You can enter up to <strong>300 characters</strong> in the comments field.</output>
 
             <div class="form-buttons-container">
                 <button type="reset" class="clear-btn">Clear</button>
