@@ -68,12 +68,12 @@
         <form id="contact-form" action="https://httpbin.org/post" method="POST">    
             <fieldset class="form-field">
                 <label for="name">Name<span class="required-indicator">*</span></label>
-                <input type="text" id="name" name="name" required placeholder="Enter your name">
+                <input type="text" id="name" name="name" required maxlength="50" placeholder="Enter your name">
             </fieldset>
             
             <fieldset class="form-field">
                 <label for="email">Email<span class="required-indicator">*</span></label>
-                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                <input type="email" id="email" name="email" required maxlength="100" placeholder="Enter your email">
             </fieldset>
 
             <fieldset class="form-field">
@@ -84,15 +84,18 @@
             <input type="hidden" id="bot-field" name="possible_bot" value="true">
 
             <fieldset class="error-messages-container">
-                <output id="name-error" class="error-message hidden" for="name"></output>
-                <output id="email-error" class="error-message hidden" for="email"></output>
-                <output id="comments-error" class="error-message hidden" for="comments"></output>
+                <output id="name-char-error" class="error-message hidden" for="name"></output>
+                <output id="name-submit-error" class="error-message hidden" for="name"></output>
+                <output id="email-char-error" class="error-message hidden" for="email"></output>
+                <output id="email-submit-error" class="error-message hidden" for="email"></output>
+                <output id="comments-char-error" class="error-message hidden" for="comments"></output>
+                <output id="comments-submit-error" class="error-message hidden" for="comments"></output>
             </fieldset>
 
             <output id="comments-info" class="info-message hidden" for="comments"></output>
 
             <div class="form-buttons-container">
-                <button type="button" class="clear-btn">Clear</button>
+                <button type="reset" class="clear-btn">Clear</button>
                 <button type="submit" class="btn">Send Message</button>
             </div>
         </form>
