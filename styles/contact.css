@@ -125,6 +125,10 @@ fieldset {
     gap: 0.5rem;
 }
 
+.info-message, .error-message {
+    text-align: center;
+}
+
 .error-message {
     color: var(--warning-color, red);
 }
