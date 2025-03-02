@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const formErrorsField = document.getElementById("form-errors");
     const clearBtn = document.querySelector(".clear-btn");
 
+    let backgroundColor = "#faf7fa";
+    let mainColor = "#f09da8";
+
     let form_errors = [];
 
     contactForm.addEventListener("click", function () {
@@ -74,13 +77,19 @@ document.addEventListener("DOMContentLoaded", function () {
             commentsField.style.backgroundColor = "rgba(255, 0, 0, 0.1)";
 
         } else {
-            charCounter.style.color = "#f09da8";
+            charCounter.style.color = mainColor;
             commentsField.style.backgroundColor = "white";
+        }
+
+        if (remaining == maxChars) {
+            commentsField.style.backgroundColor = backgroundColor;
         }
     });
 
     clearBtn.addEventListener("click", function () {
         charCounter.textContent = `${maxChars} characters`;
+        charCounter.style.color = mainColor;
+        commentsField.style.backgroundColor = backgroundColor;
     });
 
     nameField.addEventListener("input", () => nameField.setCustomValidity(""));
