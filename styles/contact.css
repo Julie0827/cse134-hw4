@@ -81,7 +81,7 @@ my-contact[data-contact="email"] {
 }
 
 :required:placeholder-shown {
-    background-color: var(--background-color, #fcfafc);
+    background-color: var(--background-color, #fcfafc) !important;
 }
 
 fieldset {

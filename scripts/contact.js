@@ -70,8 +70,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (remaining <= 30) {
             charCounter.style.color = "#fc1225";
+            commentsField.style.backgroundColor = "rgba(255, 0, 0, 0.1)";
+
         } else {
             charCounter.style.color = "#f09da8";
+            commentsField.style.backgroundColor = "white";
         }
     });
 
