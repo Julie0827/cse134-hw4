@@ -110,10 +110,10 @@
             display: none;
         }
 
-        fieldset#name-field:has(:user-invalid) ~ fieldset output#name-error,
-        fieldset#email-field:has(:user-invalid) ~ fieldset output#email-error,
-        fieldset#phone-field:has(:user-invalid) ~ fieldset output#phone-error,
-        fieldset#comments-field:has(:user-invalid) ~ fieldset output#comments-error {
+        fieldset#name-field:has(:user-invalid) ~ div output#name-error,
+        fieldset#email-field:has(:user-invalid) ~ div output#email-error,
+        fieldset#phone-field:has(:user-invalid) ~ div output#phone-error,
+        fieldset#comments-field:has(:user-invalid) ~ div output#comments-error {
             display: block;
         }
 
@@ -202,12 +202,12 @@
 
             <input type="hidden" id="bot-field" name="possible_bot" value="true">
 
-            <fieldset class="error-messages-container">
-                <output id="name-error" class="error-message" for="name">Please enter a valid name (2-50 letters, no numbers or symbols)</output>
-                <output id="email-error" class="error-message" for="email">Please enter a valid email address. (e.g., name@example.com)</output>
-                <output id="phone-error" class="error-message" for="phone">Please enter a valid phone number or leave blank. (e.g., 123-456-7890)</output>
-                <output id="comments-error" class="error-message" for="comments">Please enter a valid comment (10-300 characters, using letters, numbers, and standard symbols)</output>
-            </fieldset>
+            <div class="error-messages-container">
+                <output id="name-error" class="error-message">Please enter a valid name (2-50 letters, no numbers or symbols)</output>
+                <output id="email-error" class="error-message">Please enter a valid email address. (e.g., name@example.com)</output>
+                <output id="phone-error" class="error-message">Please enter a valid phone number or leave blank. (e.g., 123-456-7890)</output>
+                <output id="comments-error" class="error-message">Please enter a valid comment (10-300 characters, using letters, numbers, and standard symbols)</output>
+            </div>
 
             <output id="comments-info" class="info-message" for="comments">You can enter up to <strong>300 characters</strong> in the comments field.</output>
 

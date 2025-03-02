@@ -24,17 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let flashTimeouts = {};
 
-    function handleIllegalChar(e) {
+    function handleInvalidChar(e) {
         const input = e.target;
         const fieldName = input.name.charAt(0).toUpperCase() + input.name.slice(1);
         const rx = regexAllowed[input.id];
         const errorOutput = document.getElementById(`${input.id}-error`);
 
         if (input.value && !rx.test(input.value)) {
-            const illegalChar = [...input.value].find(char => !new RegExp(rx).test(char));
-            form_errors.push({ field: input.name, errorType: "invalidCharacter", errorDescription: `User typed invalid character '${illegalChar}' in the ${input.name} field.` });
+            const invalidChar = [...input.value].find(char => !new RegExp(rx).test(char));
+            form_errors.push({ field: input.name, errorType: "invalidCharacter", errorDescription: `User typed invalid character '${invalidChar}' in the ${input.name} field.` });
             
-            errorOutput.textContent = `Illegal character "${illegalChar}" detected in ${fieldName} field.`;
+            errorOutput.textContent = `Invalid character "${invalidChar}" detected in ${fieldName} field.`;
             errorOutput.classList.remove("hidden");
 
             input.classList.remove("flash");
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             input.classList.add("flash");
 
-            input.value = input.value.replace(illegalChar, "");
+            input.value = input.value.replace(invalidChar, "");
 
             clearTimeout(flashTimeouts[input.id]);
 
@@ -53,9 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    document.getElementById("name").addEventListener("input", handleIllegalChar);
-    document.getElementById("email").addEventListener("input", handleIllegalChar);
-    document.getElementById("comments").addEventListener("input", handleIllegalChar);
+    document.getElementById("name").addEventListener("input", handleInvalidChar);
+    document.getElementById("email").addEventListener("input", handleInvalidChar);
+    document.getElementById("comments").addEventListener("input", handleInvalidChar);
 
     const charCounter = document.getElementById("char-counter");
     const maxChars = 300;
