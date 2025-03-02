@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.getElementById("contact-form");
+    const nameField = document.getElementById("name");
+    const emailField = document.getElementById("email");
+    const commentsField = document.getElementById("comments");
     const botField = document.getElementById("bot-field");
+    const formErrorsField = document.getElementById("form-errors");
+
+    let form_errors = [];
 
     contactForm.addEventListener("click", function () {
         botField.value = "false";
@@ -26,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (input.value && !rx.test(input.value)) {
             const illegalChar = [...input.value].find(char => !new RegExp(rx).test(char));
+            form_errors.push({ field: input.name, errorType: "invalidCharacter", errorDescription: `User typed invalid character '${illegalChar}' in the ${input.name} field.` });
             
             errorOutput.textContent = `Illegal character "${illegalChar}" detected in ${fieldName} field.`;
             errorOutput.classList.remove("hidden");
@@ -50,9 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("email").addEventListener("input", handleIllegalChar);
     document.getElementById("comments").addEventListener("input", handleIllegalChar);
 
-    const nameField = document.getElementById("name");
-    const emailField = document.getElementById("email");
-    const commentsField = document.getElementById("comments");
     const charCounter = document.getElementById("char-counter");
     const maxChars = 300;
 
@@ -69,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             charCounter.style.color = "#f09da8";
         }
-
     });
 
     nameField.addEventListener("input", () => nameField.setCustomValidity(""));
@@ -85,9 +88,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (nameField.validity.valueMissing) {
             nameField.setCustomValidity("Oops! The name field cannot be empty. 😧");
+            form_errors.push({ field: "name", errorType: "valueMissing", errorDescription: "User tried to submit with an empty name field." })
             isValid = false;
         } else if (nameField.validity.tooShort) {
             nameField.setCustomValidity("Too short! 🌟 Your name needs at least 2 characters.");
+            form_errors.push({ field: "name", errorType: "tooShort", errorDescription: `User tried to submit a too short name (length: ${nameField.value.length}) Minimum 2 characters required.` })
             isValid = false;
         } else {
             nameField.setCustomValidity("");
@@ -95,9 +100,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (emailField.validity.valueMissing) {
             emailField.setCustomValidity("Looks like you forgot to add your email. 💌");
+            form_errors.push({ field: "email", errorType: "valueMissing", errorDescription: "User tried to submit with an empty email field." })
             isValid = false;
         } else if (emailField.validity.typeMismatch) {
             emailField.setCustomValidity("Hmm..🤔 Please enter a valid email address. (e.g., name@example.com)");
+            form_errors.push({ field: "email", errorType: "invalidFormat", errorDescription: `User tried to submit an invalid email format: ${emailField.value}` })
             isValid = false;
         } else {
             emailField.setCustomValidity("");
@@ -105,9 +112,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (commentsField.validity.valueMissing) {
             commentsField.setCustomValidity("Don't forget to leave a comment! 💭");
+            form_errors.push({ field: "comments", errorType: "valueMissing", errorDescription: "User tried to submit with an empty comments field." })
             isValid = false;
         } else if (commentsField.validity.tooShort) {
             commentsField.setCustomValidity("Too short! ✏️ Your comment needs at least 10 characters.")
+            form_errors.push({ field: "comments", errorType: "tooShort", errorDescription: `User tried to submit a too short comment (length: ${commentsField.value.length}) Minimum 10 characters required.` })
             isValid = false;
         } else {
             commentsField.setCustomValidity("")
@@ -116,6 +125,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!isValid) {
             e.preventDefault();
             contactForm.reportValidity();
+        } else {
+            formErrorsField.value = JSON.stringify(form_errors);
+            form_errors = [];
         }
     });
 });
