@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
             isValid = false;
         } else if (nameField.validity.tooShort) {
             nameField.setCustomValidity("Too short! 🌟 Your name needs at least 2 characters.");
-            form_errors.push({ field: "name", errorType: "tooShort", errorDescription: `User tried to submit a too short name (length: ${nameField.value.length}) Minimum 2 characters required.` })
+            form_errors.push({ field: "name", errorType: "tooShort", errorDescription: `User tried to submit a too short name (length: ${nameField.value.length}). Minimum 2 characters required.` })
             isValid = false;
         } else {
             nameField.setCustomValidity("");
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
             isValid = false;
         } else if (commentsField.validity.tooShort) {
             commentsField.setCustomValidity("Too short! ✏️ Your comment needs at least 10 characters.")
-            form_errors.push({ field: "comments", errorType: "tooShort", errorDescription: `User tried to submit a too short comment (length: ${commentsField.value.length}) Minimum 10 characters required.` })
+            form_errors.push({ field: "comments", errorType: "tooShort", errorDescription: `User tried to submit a too short comment (length: ${commentsField.value.length}). Minimum 10 characters required.` })
             isValid = false;
         } else {
             commentsField.setCustomValidity("")
