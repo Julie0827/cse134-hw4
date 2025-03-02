@@ -76,10 +76,6 @@ header {
     align-items: stretch;
 }
 
-header audio {
-    align-self: flex-end;
-}
-
 .main-nav {
     display: flex;
     justify-content: space-between;
@@ -164,6 +160,55 @@ header audio {
     background: url('../assets/images/search-active.png') no-repeat right 1em center;
     background-size: 1.3rem;
 }
+
+.setting {
+    display: flex;
+    justify-content: flex-end;
+}
+
+audio {
+    display: none;
+}
+
+.play-pause-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: none;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow:
+        0 0.3rem 0 rgba(0, 0, 0, 0.2),
+        inset 0 0.3rem 0 rgba(255, 255, 255, 0.2);
+}
+
+.play-pause-btn:hover {
+    background-color: lightskyblue;
+}
+
+.play-pause-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.music-background {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    animation: rotate 10s linear infinite;
+    animation-play-state: paused;
+}
+
+.playing .music-background {
+    animation-play-state: running;
+}
+
+
 
 footer {
     font-size: 0.9rem;
@@ -416,6 +461,10 @@ h2 {
         display: none;
     }
 
+    .main-nav {
+        margin-bottom: 2rem;
+    }
+
     .search-sidebar {
         top: 5rem;
     }
@@ -432,7 +481,7 @@ h2 {
         font-size: 18px;
     }
 
-    .nav-link, audio {
+    .nav-link {
         display: none;
     }
 
