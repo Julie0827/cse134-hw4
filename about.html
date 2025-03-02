@@ -12,6 +12,11 @@
     <link rel="preload" as="image" type="image/jpg" href="assets/images/profile-small.jpg" media="(max-width: 599px)">
     <script src="scripts/search.js"></script>
     <script src="scripts/main.js"></script>
+    <script>
+        if (localStorage.getItem("darkMode") === "enabled") {
+            document.documentElement.classList.add("dark-mode");
+        }
+    </script>
 </head>
 <body>
     <noscript>

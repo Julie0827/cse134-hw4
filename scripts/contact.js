@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const formErrorsField = document.getElementById("form-errors");
     const clearBtn = document.querySelector(".clear-btn");
 
-    const backgroundColor = getComputedStyle(document.body).getPropertyValue('--form-input-background-color');
-    const mainColor = getComputedStyle(document.body).getPropertyValue('--main-color');
+    const backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--form-input-background-color');
+    const mainColor = getComputedStyle(document.documentElement).getPropertyValue('--main-color');
 
     let form_errors = [];
 

@@ -220,7 +220,7 @@ audio {
     border-radius: 999px;
     width: 6rem;
     height: 2.8rem;
-    background-color: #84d5f5;
+    background-color: var(--toggle-background-color);
     transition: background-color 0.5s ease-in-out;
 }
 
@@ -237,16 +237,8 @@ audio {
     position: relative;
     width: 6rem;
     height: 6rem;
-    transform: translateX(-1.35rem);
+    transform: translateX(var(--toggle-translate-x-value));
     transition: transform 0.6s cubic-bezier(0.2, 1.5, 0.3, 1.25);
-}
-
-.inner-container.dark-mode {
-    transform: translateX(1.35rem);
-}
-
-.toggle-container.dark-mode {
-    background-color: #404040;
 }
 
 .circle {
@@ -259,13 +251,7 @@ audio {
 
 .circle:not(.sun-moon) {
     background-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0.2rem 0 0.3rem rgba(132, 213, 245, 0.1),
-                -0.2rem 0 0.3rem rgba(132, 213, 245, 0.1);
-}
-
-.circle:not(.sun-moon).dark-mode {
-    box-shadow: 0.2rem 0 0.3rem rgba(9, 9, 31, 0.1),
-                -0.2rem 0 0.3rem rgba(9, 9, 31, 0.1);
+    box-shadow: var(--shadow-circle);
 }
 
 .circle:nth-child(1) {
@@ -281,30 +267,9 @@ audio {
 .sun-moon {
     width: 2.2rem;
     height: 2.2rem;
-    background-color: #f7dc7e;
-    box-shadow: 0 0.1rem 0 rgba(250, 215, 95, 0.8),
-                0 0.2rem 0 rgba(128, 128, 128, 0.5),
-                inset 0 0.1rem 0 rgba(255, 255, 200, 0.6);
+    background-color: var(--sun-moon-color);
+    box-shadow: var(--shadow-sun-moon);
     transition: background-color 0.3s ease-in-out;
-}
-
-.sun-moon.dark-mode {
-    background-color: #f7f7fa;
-    box-shadow: 0 0.1rem 0 rgba(222, 222, 227, 0.6),
-                0 0.2rem 0 rgba(128, 128, 128, 0.5),
-                inset 0 0.1rem 0 white;
-}
-
-.sun-moon.dark-mode::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("../assets/images/moon.png");
-    background-size: 120%;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.3;
-    border-radius: inherit;
 }
 
 footer {
