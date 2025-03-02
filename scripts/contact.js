@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const commentsField = document.getElementById("comments");
     const botField = document.getElementById("bot-field");
     const formErrorsField = document.getElementById("form-errors");
+    const clearBtn = document.querySelector(".clear-btn");
 
     let form_errors = [];
 
@@ -76,6 +77,10 @@ document.addEventListener("DOMContentLoaded", function () {
             charCounter.style.color = "#f09da8";
             commentsField.style.backgroundColor = "white";
         }
+    });
+
+    clearBtn.addEventListener("click", function () {
+        charCounter.textContent = `${maxChars} characters`;
     });
 
     nameField.addEventListener("input", () => nameField.setCustomValidity(""));
