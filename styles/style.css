@@ -220,7 +220,7 @@ audio {
     border-radius: 999px;
     width: 6rem;
     height: 2.8rem;
-    background-color: rgb(132, 213, 245);
+    background-color: #84d5f5;
     transition: background-color 0.5s ease-in-out;
 }
 
@@ -246,7 +246,7 @@ audio {
 }
 
 .toggle-container.dark-mode {
-    background-color: rgb(9, 9, 31);
+    background-color: #404040;
 }
 
 .circle {
@@ -281,7 +281,7 @@ audio {
 .sun-moon {
     width: 2.2rem;
     height: 2.2rem;
-    background-color: rgb(247, 220, 126);
+    background-color: #f7dc7e;
     box-shadow: 0 0.1rem 0 rgba(250, 215, 95, 0.8),
                 0 0.2rem 0 rgba(128, 128, 128, 0.5),
                 inset 0 0.1rem 0 rgba(255, 255, 200, 0.6);
@@ -289,7 +289,7 @@ audio {
 }
 
 .sun-moon.dark-mode {
-    background-color: rgb(247, 247, 250);
+    background-color: #f7f7fa;
     box-shadow: 0 0.1rem 0 rgba(222, 222, 227, 0.6),
                 0 0.2rem 0 rgba(128, 128, 128, 0.5),
                 inset 0 0.1rem 0 white;
@@ -306,7 +306,6 @@ audio {
     opacity: 0.3;
     border-radius: inherit;
 }
-
 
 footer {
     font-size: 0.9rem;
@@ -327,6 +326,10 @@ footer ul li a {
 
 h2 {
     color: var(--main-color, pink);
+}
+
+:is(.btn, .repo-btn) {
+    color: var(--const-text-primary-color, black);
 }
 
 :is(.btn, .top-btn, .clear-btn) {
@@ -351,7 +354,6 @@ h2 {
     border-radius: 0.5em;
     background: var(--gradient-primary, pink);
     box-shadow: var(--shadow-button, none);
-    color: var(--text-primary-color, black);
     transition: transform 0.2s ease-in-out;
 }
 
@@ -383,6 +385,7 @@ h2 {
     visibility: hidden;
     pointer-events: none;
     z-index: 10;
+    background-color: var(--background-color-secondary);
 }
 
 .search-sidebar:has(img) {
@@ -418,7 +421,7 @@ h2 {
 
 .result-item:hover {
     background-color: var(--hover-background-color, snow);
-    color: var(--hightlight-text-color, magenta);
+    color: var(--highlight-text-color, magenta);
 }
 
 .result-item p {
@@ -430,7 +433,7 @@ h2 {
 }
 
 .match-query {
-    background-color: var(--hightlight-background-color, yellow);
+    background-color: var(--highlight-background-color, yellow);
 }
 
 .search-sidebar :is(.match-query, .page-title) {

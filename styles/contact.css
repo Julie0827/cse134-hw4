@@ -31,6 +31,7 @@ my-contact {
     box-sizing: border-box;
     padding: 0 4%;
     width: 31%;
+    color: var(--const-text-primary-color, black);
 }
 
 my-contact p {
@@ -70,7 +71,7 @@ my-contact[data-contact="email"] {
 
 #contact-form {
     box-sizing: border-box;
-    background-color: white;
+    background-color: var(--background-color-secondary);
     width: max(50%, 600px);
     display: flex;
     flex-direction: column;
@@ -78,10 +79,6 @@ my-contact[data-contact="email"] {
     gap: 1.5rem;
     padding: 3rem;
     box-shadow: var(--shadow-form, none);
-}
-
-:required:placeholder-shown {
-    background-color: var(--background-color, #fcfafc);
 }
 
 fieldset {
@@ -104,15 +101,23 @@ fieldset {
 #contact-form label {
     text-align: right;
     font-weight: bold;
+    color: var(--text-primary-color, black);
 }
 
 #contact-form input,
 #contact-form textarea {
+    background-color: transparent;
     width: 100%;
     padding: 0.7rem 0.7rem;
     border: 1px solid var(--main-color-dark, hotpink);
     border-radius: 0.5rem;
+    color: var(--text-primary-color, black);
 }
+
+#contact-form :is( input, textarea):required:placeholder-shown {
+    background-color: var(--form-input-background-color, #fcfafc);
+}
+
 
 .flash {
     animation: flash 1.5s ease-in-out;
@@ -125,12 +130,16 @@ fieldset {
     gap: 0.5rem;
 }
 
+.error-message {
+    color: var(--warning-color, red);
+}
+
 .info-message, .error-message {
     text-align: center;
 }
 
-.error-message {
-    color: var(--warning-color, red);
+.info-message {
+    color: var(--text-primary-color, black);
 }
 
 #char-counter {

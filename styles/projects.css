@@ -73,7 +73,6 @@
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    color: var(--text-primary-color, black);
     padding: 0.7rem 1rem;
     text-decoration: none;
     background: var(--gradient-primary);

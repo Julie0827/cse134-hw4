@@ -38,23 +38,52 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.querySelector(".toggle-container");
     const inner = document.querySelector(".inner-container");
     const circles = document.querySelectorAll(".circle");
+    const sunMoon = document.querySelector(".sun-moon");
+
+    function enableDarkMode() {
+        toggle.classList.add("dark-mode");
+        toggle.title = "Switch to Light Mode";
+        inner.classList.add("dark-mode");
+        circles.forEach(circle => {
+            circle.classList.add("dark-mode");
+        });
+
+        document.body.classList.add("dark-mode");
+        localStorage.setItem("darkMode", "enabled");
+    }
+
+    function disableDarkMode() {
+        toggle.classList.remove("dark-mode");
+        toggle.title = "Switch to Dark Mode";
+        inner.classList.remove("dark-mode");
+        circles.forEach(circle => {
+            circle.classList.remove("dark-mode");
+        });
+
+        document.body.classList.remove("dark-mode");
+        localStorage.setItem("darkMode", "disabled");
+    }
+
+    if (localStorage.getItem("darkMode") === "enabled") {
+        toggle.style.transition = "none";
+        inner.style.transition = "none";
+        sunMoon.style.transition = "none";
+        
+        enableDarkMode();
+
+        setTimeout(() => {
+            toggle.style.transition = "background-color 0.5s ease-in-out";
+            inner.style.transition = "transform 0.6s cubic-bezier(0.2, 1.5, 0.3, 1.25)";
+            sunMoon.style.transition = "background-color 0.3s ease-in-out";
+        }, 50);
+
+    }
 
     toggle.addEventListener("click", function () {
         if (toggle.classList.contains("dark-mode")) {
-            toggle.classList.remove("dark-mode");
-            toggle.title = "Switch to Dark Mode";
-            inner.classList.remove("dark-mode");
-            circles.forEach(circle => {
-                circle.classList.remove("dark-mode");
-            });
-            
+            disableDarkMode();
         } else {
-            toggle.classList.add("dark-mode");
-            toggle.title = "Switch to Light Mode";
-            inner.classList.add("dark-mode");
-            circles.forEach(circle => {
-                circle.classList.add("dark-mode");
-            });
+            enableDarkMode();
         }
     });
 });

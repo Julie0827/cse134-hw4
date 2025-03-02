@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const formErrorsField = document.getElementById("form-errors");
     const clearBtn = document.querySelector(".clear-btn");
 
-    let backgroundColor = "#faf7fa";
-    let mainColor = "#f09da8";
+    const backgroundColor = getComputedStyle(document.body).getPropertyValue('--form-input-background-color');
+    const mainColor = getComputedStyle(document.body).getPropertyValue('--main-color');
 
     let form_errors = [];
 
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         } else {
             charCounter.style.color = mainColor;
-            commentsField.style.backgroundColor = "white";
+            commentsField.style.backgroundColor = "transparent";
         }
 
         if (remaining == maxChars) {
