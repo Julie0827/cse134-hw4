@@ -34,4 +34,27 @@ document.addEventListener("DOMContentLoaded", function () {
             playPauseBtn.title = "Play Music";
         }
     });
+
+    const toggle = document.querySelector(".toggle-container");
+    const inner = document.querySelector(".inner-container");
+    const circles = document.querySelectorAll(".circle");
+
+    toggle.addEventListener("click", function () {
+        if (toggle.classList.contains("dark-mode")) {
+            toggle.classList.remove("dark-mode");
+            toggle.title = "Switch to Dark Mode";
+            inner.classList.remove("dark-mode");
+            circles.forEach(circle => {
+                circle.classList.remove("dark-mode");
+            });
+            
+        } else {
+            toggle.classList.add("dark-mode");
+            toggle.title = "Switch to Light Mode";
+            inner.classList.add("dark-mode");
+            circles.forEach(circle => {
+                circle.classList.add("dark-mode");
+            });
+        }
+    });
 });
