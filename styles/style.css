@@ -330,6 +330,7 @@ h2 {
     background: var(--gradient-primary, pink);
     box-shadow: var(--shadow-button, none);
     transition: transform 0.2s ease-in-out;
+    text-decoration: none;
 }
 
 .btn:hover {
