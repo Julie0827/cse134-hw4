@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    document.documentElement.classList.remove("no-js");
+
     const dropdownNavBtn = document.querySelector(".dropdown-nav-btn");
     const dropdownNav = document.querySelector(".dropdown-nav");
 

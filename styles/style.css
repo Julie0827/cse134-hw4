@@ -17,6 +17,10 @@ noscript p {
     text-align: center;
 }
 
+html.no-js .setting {
+    display: none !important;
+}
+
 html {
     font-size: 16px;
 }
